@@ -1,0 +1,460 @@
+config:
+    required: true
+
+database:
+    +:
+        name: default
+        package: src.Model
+        namespace: App\Model
+        defaultIdMethod: native
+        identifierQuoting: true
+
+    +vendor:
+        type: mysql
+        parameters:
+            Engine: InnoDB
+            Charset: utf8
+
+    +behavior:
+        - auto_add_pk
+
+    content_block:
+        data: longvarchar
+
+    user:
+        active_company_id: - int > company.id
+        type: tinyint
+        first_name: text
+        last_name: text
+        middle_name: text
+        email: varchar(255)
+        phone: varchar(255)
+        password: varchar(255)
+        salt: varchar(255)
+        invoice_columns: array
+        mercury_columns: array
+        first_import_smart_completed: bool key
+        smart_shown: bool = false
+        +behavior:
+            - timestampable
+
+    user_access_token:
+        user_id: int > user.id
+        company_id: - int > company.id
+        token: varchar(64) key
+        refresh_token: varchar(64) key
+        expired_at: - datetime
+        +behavior:
+            - timestampable
+
+    user_group:
+        title: varchar(255)
+        name: varchar(50) key(10)
+        roles: array
+
+    user_group_rel:
+        user_id: int > user.id
+        user_group_id: int > user_group.id
+
+    # формы
+    form:
+        title: text
+        form_title: text
+        button_text: text
+        code: varchar(32)
+        notification_email: text
+        success_text: text
+        visible: bool = 1
+        +behavior:
+            - sortable
+
+    form_field:
+        form_id: int > form.id
+        title: text
+        code: text
+        type: tinyint
+        required: bool
+        validation_type: tinyint
+        file_extensions: text
+        max_file_size: int
+        required_error: text
+        invalid_error: text
+        visible: bool = 1
+        +behavior:
+            - sortable: form_id
+
+    form_field_option:
+        field_id: int > form_field.id
+        title: text
+        visible: bool = 1
+        +behavior:
+            - sortable: field_id
+
+    form_result:
+        form_id: int > form.id
+        user_id: - int > user.id
+        form_title: text
+        status: tinyint
+        url_from: text
+        answer: text
+        notice: text
+        published: bool
+        ip_address: text
+        read: bool
+        answered_at: datetime
+        +behavior:
+            - timestampable
+
+    form_result_field:
+        result_id: int > form_result.id
+        form_id: int > form.id
+        field_id: int > form_field.id
+        subject_id: - int > form_report_subject.id
+        value: text
+        file_path: text
+        +behavior:
+            - sortable
+            - file
+
+    form_report_subject:
+        title: text
+        visible: bool = 1 key
+        +behavior:
+            - sortable
+
+    company:
+        user_id: int > user.id
+        title: text
+        email: varchar(255)
+        diadoc_external_code: varchar(64)
+        docrobot_external_code: varchar(64)
+        storehouse_external_code: varchar(64)
+        description: text
+        inn: varchar(32)
+        kpp: varchar(32)
+        site: varchar(32)
+        delivery_term: text
+        payment_term: text
+        min_order_amount: text
+        verification_status: tinyint = 1 key
+        type: tinyint = 1 key
+        visible: bool = 1 key
+        from_smart: bool key
+        approve_from_smart: bool key
+        +behavior:
+            - image
+            - gallery
+
+    company_verification_request:
+        company_id: int > company.id
+        status: tinyint = 1 key
+        answer: text
+        +behavior:
+            - timestampable
+
+    company_user:
+        company_id: int > company.id
+        user_id: - int > user.id
+        first_name: - text
+        email: - varchar(255)
+        phone: - varchar(255)
+        comment: - text
+        active: bool = 1 key
+        register: bool = 0
+        +behavior:
+            - image
+            - timestampable
+
+    company_user_rule:
+        company_user_id: int > company_user.id
+        rules: array
+
+    company_favorite:
+        company_id: int > company.id
+        favorite_id: int > company.id
+
+    company_organization_shop:
+        company_id: int > company.id
+        diadoc_external_code: varchar(64)
+        docrobot_external_code: varchar(64)
+        title: text
+        alternative_title: text
+        partner_title: text
+        external_code: varchar(64) key
+        address: text
+        latitude: varchar(32)
+        longitude: varchar(32)
+        from_smart: bool key
+        approve_from_smart: bool key
+
+    # таблица для хранения информации, оставленной одной компанией о другой
+    company_comment:
+        company_id: int > company.id
+        comment_id: int > company.id
+        text: text
+        alternative_title: varchar(255)
+        external_code: varchar(64)
+
+    company_shop_title:
+        company_id: int > company.id
+        shop_id: int > company_organization_shop.id
+        title: text
+
+    buyer_job_request:
+        buyer_id: int > company.id
+        supplier_id: int > company.id
+        text: text
+        +behavior:
+            - timestampable
+
+    product:
+        company_id: - int > company.id
+        category_id: int > product_category.id
+        unit_id: - int > unit.id
+        brand_id: - int > product_brand.id
+        manufacturer_id: - int > product_manufacturer.id
+        nomenclature: text
+        external_code: varchar(64) key
+        article: text
+        options: text
+        price: double
+        barcode: text
+        quant: text
+        vat: float
+        edo: bool key
+        +behavior:
+            - timestampable
+
+    product_manufacturer:
+        company_id: int > company.id
+        title: text
+        external_code: varchar(64) key
+
+    product_brand:
+        company_id: int > company.id
+        title: text
+        external_code: varchar(64) key
+
+    product_category:
+        company_id: - int > company.id
+        parent_id: - int > product_category.id
+        title: text
+        external_code: varchar(64) key
+
+    unit:
+        company_id: - int > company.id
+        title: text
+        code: varchar(16) key
+        external_code: varchar(64) key
+        visible: bool = 1 key
+        from_iiko: bool key
+        from_store_house: bool key
+        +behavior:
+            - sortable
+
+    product_import:
+        company_id: int > company.id
+        product_category_id: int > product_category.id
+        mapping: array
+        +behavior:
+            - timestampable
+
+    product_import_field:
+        import_id: int > product_import.id
+        value: text
+        row: int key
+        col: int key
+        header: bool key
+
+    notification:
+        system_title: text
+        text: text
+        code: varchar(32) key
+
+    user_notification:
+        user_id: int > user.id
+        notification_id: int > notification.id
+        buyer_id: - int > company.id
+        supplier_id: - int > company.id
+        invoice_id: - int > invoice.id
+        shop_id: - int > company_organization_shop.id
+        text: text
+        link: text
+        readed: bool key
+        +behavior:
+            - timestampable
+
+    notification_pack:
+        user_id: int pk > user.id
+        number: int pk
+        user_notification_id: array
+        +behavior:
+            - timestampable
+
+    invoice:
+        supplier_id: - int > company.id
+        buyer_id: int > company.id
+        shop_id: - int > company_organization_shop.id
+        acceptance_status_id: - int > invoice_status.id
+        discharge_status_id: - int > invoice_status.id
+        counterparty_id: - int > counterparty.id
+        warehouse_id: - int > warehouse.id
+        external_code: varchar(64) key
+        comment: text
+        number: text
+        comment_egais: text
+        message_supplier: text
+        has_accepted: text
+        link_order: text
+        pay_up_to: - datetime
+        acceptance_at: - datetime
+        iiko_send: bool
+        store_house_send: bool
+        +behavior:
+            - timestampable
+
+    invoice_product:
+        product_id: - int > product.id
+        unit_id: - int > unit.id
+        comparison_id: - int > invoice_product.id
+        invoice_id: - int > invoice.id
+        price: double
+        price_with_vat: double
+        total_price_vat: double
+        total_price: - double
+        total_price_with_vat: double
+        quantity: double
+        accept_quantity: double
+        quantity_rate: double
+        comparison_rate: - double
+        vat: int
+
+    invoice_status:
+        title: text
+        code: varchar(16) key
+        visible: bool = 1 key
+        type: tinyint = 1 key
+        +behavior:
+            - sortable
+
+    invoice_exchange:
+        company_id: int > company.id
+        number: int
+        +behavior:
+            - timestampable
+
+    invoice_pack:
+        company_id: int > company.id
+        invoice_id: int > invoice.id
+        number: int
+        +behavior:
+            - timestampable
+
+    counterparty:
+        company_id: int > company.id
+        title: text
+        external_code: varchar(64) key
+
+    warehouse:
+        company_id: int > company.id
+        title: text
+        external_code: varchar(64) key
+        from_store_house: bool key
+
+    api_request_log:
+        company_id: - int > company.id
+        token: varchar(64)
+        method: varchar(8)
+        uri: text
+        status_code: int
+        request_data: text
+        response_data: text
+        +behavior:
+            - timestampable
+
+    mercury_setting:
+        company_id: int pk > company.id
+        issuer_id: varchar(255)
+        login: varchar(64)
+        veterinary_login: varchar(64)
+        password: varchar(64)
+        api_key: varchar(255)
+        auto_repayment: bool
+
+    mercury_request:
+        company_id: int > company.id
+        status: tinyint
+        error: text
+        method: text
+        +behavior:
+            - timestampable
+
+    mercury_task:
+        company_id: int > company.id
+        status: tinyint = 1 key
+        type: tinyint = 1 key
+        error: text
+        options: text
+        +behavior:
+            - timestampable
+
+    mercury_problem:
+        supplier_id: int > company.id
+        buyer_id: int > company.id
+        reason: text
+        documents: array
+        +behavior:
+            - timestampable
+
+    mercury_doctor:
+        company_id: int > company.id
+        external_code: varchar(64)
+        veterinary_email: text
+
+    veterinary_document:
+        company_id: int > company.id
+        uuid: varchar(255) pk
+        enterprise_guid: varchar(255)
+        sender: text
+        recipient: text
+        status: text
+        invoice_number: text
+        product_title: text
+        data: text
+        issue_date: datetime
+        +behavior:
+            - timestampable
+
+    diadoc_setting:
+        company_id: int pk > company.id
+        login: varchar(64)
+        password: varchar(64)
+        box_id: varchar(64)
+        api_key: varchar(255)
+
+    docrobot_setting:
+        company_id: int pk > company.id
+        login: varchar(64)
+        password: varchar(64)
+        gln: varchar(64)
+
+    iiko_setting:
+        company_id: int pk > company.id
+        login: varchar(64)
+        password: varchar(64)
+        url: varchar(64)
+
+    store_house_setting:
+        company_id: int pk > company.id
+        warehouse_id: - int > warehouse.id
+        login: varchar(64)
+        password: varchar(64)
+        ip: varchar(64)
+        port: varchar(8)
+        rid: varchar(64)
+
+    company_shop_code:
+        company_id: int > company.id
+        shop_id: int > company_organization_shop.id
+        external_code: varchar(255) key
+        alternative_title: text

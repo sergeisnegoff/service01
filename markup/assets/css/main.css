@@ -1,0 +1,304 @@
+section.box__companyuser__page .row:first-child,
+section.box__suppliers__page .row:first-child,
+section.box__moderator__page .row:first-child,
+section.box__buyers__page .row:first-child{
+    align-items: center;
+}
+section.box__companyuser__page .box__tabs,
+section.box__suppliers__page .box__tabs,
+section.box__moderator__page .box__tabs,
+section.box__buyers__page .box__tabs{
+    margin: 20px 0 10px;
+    height: 50px;
+}
+.content-aboutcompany{
+    padding: 35px 0;
+}
+.content-aboutcompany .box__company__logo img{
+    max-width: 100px;
+    margin: 0 0 15px;
+}
+.content-aboutcompany .box__company-site{
+    display: block;
+    margin: 0 0 15px;
+}
+.content-aboutcompany .box__company-site a{
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-9);
+}
+.content-aboutcompany .box__company-string ul li a{
+    color: var(--color-9);
+}
+.content-aboutcompany .box__company-string{
+    position: relative;
+    display: block;
+    margin: 0 0 25px;
+}
+.content-aboutcompany .box__company-string ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.content-aboutcompany .box__company-string ul li span{
+    font-weight: bold;
+}
+.content-aboutcompany .box__company-description{
+    margin: 15px 0 35px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-9);
+}
+.content-aboutcompany .box__company-description > *{
+    word-break: break-all;
+}
+.content-aboutcompany .box__company-comment .box__textarea{
+    margin: 0;
+}
+.content-aboutcompany .box__company-comment .box__textarea textarea{
+    width: 550px;
+    height: 140px;
+    min-height: 50px;
+    max-height: 200px;
+    margin: 10px 0 0;
+}
+.content-aboutcompany .box__company-comment .box__comment-prompt{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 24px;
+    color: #747474;
+}
+.content-aboutcompany .box__company-comment .btn{
+    margin: 20px 0 0;
+}
+.content-aboutcompany .box__tab-content{
+    margin: 30px 0 40px;
+}
+.suppliers__addproduct{
+    margin: 40px 0;
+}
+.suppliers__addproduct h2{
+    font-size: 18px;
+    margin: 0 0 15px;
+}
+.box__form-company{
+    padding: 35px 0 0;
+}
+.box__form-company h3{
+    margin: 20px 0 0;
+}
+.box__form-alert{
+    position: relative;
+    display: block;
+    padding: 30px 30px 25px;
+    margin: 10px 0 15px;
+    background: #F3F2F8;
+    border: 1px solid var(--color-10);
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+.box__form-alert.alert-horizontal{
+    padding: 20px 30px 20px;
+}
+.box__form-alert.alert-horizontal .btn{
+    margin: 0;
+    top: 3px;
+}
+.box__form-alert.alert-horizontal .icon__alert{
+    position: absolute;
+    margin: 0;
+}
+.box__form-alert.alert-horizontal .description-alert{
+    padding: 0 0 0 45px;
+}
+.box__form-alert.alert-horizontal .description-alert p{
+    margin: 0;
+}
+.box__form-alertwarning{
+    background-color: #FFDEE9;
+    border-color: #ED145B;
+}
+.box__form-alert .icon__alert{
+    position: relative;
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin: 0 0 15px;
+}
+.box__form-alert h4{
+    margin: 0 0 20px;
+}
+.box__form-alert .icon__alert span{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/icon/nav-alert-purple.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.box__form-alertwarning .icon__alert span{
+    background-image: url(../img/icon/nav-alert-red.svg);
+}
+.box__form-alert h4 span{
+    color: var(--color-10);
+}
+.box__form-alertwarning h4 span{
+    color: #ED145B
+}
+.box__form-alert .description-alert{
+    font-size: 18px;
+}
+.box__form-alert .btn{
+    margin: 20px 0 0;
+}
+.box__checkbox.box__checkbox-step .box__checkbox{
+    padding: 0 0 0 25px;
+}
+.box__checkbox.box__checkbox-step .box__checkbox input{
+    pointer-events: none;
+}
+.box__checkbox.box__checkbox-step .box__checkbox{
+    opacity: 0.5;
+    pointer-events: none;
+}
+.box__checkbox.box__checkbox-step input:checked ~ .box__checkbox{
+    opacity: 1;
+    pointer-events: auto;
+}
+.table-invoice .table__content .row .col-1:first-child,
+.table-invoice .table__content-title .row .col-1:first-child{
+    flex: 0 0 5%;
+    max-width: 5%;
+}
+.table-invoice .table__content .row .col-1:last-child,
+.table-invoice .table__content-title .row .col-1:last-child{
+    flex: 0 0 10%;
+    max-width: 10%;
+    white-space: nowrap;
+}
+.table-invoice-page .table__content .row .col-2:first-child,
+.table-invoice-page .table__content-title .row .col-2:first-child{
+    flex: 0 0 13%;
+    max-width: 13%;
+}
+.table-invoice-page .table__content .row .col-1:last-child,
+.table-invoice-page .table__content-title .row .col-1:last-child{
+    flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+    white-space: nowrap;
+}
+.invoice-page h1{
+    font-size: 28px;
+}
+.invoice-page .box__content__table.table-invoice-page .box__table__item.box__table-export .box__checkbox{
+    top: 0;
+}
+.table__invoice-result{
+    position: relative;
+}
+.table__invoice-result .row{
+    margin: 25px -15px;
+}
+.table__invoice-result h4{
+    font-size: 18px;
+}
+.table__invoice-result h4 span{
+    display: block;
+    font-weight: normal;
+    font-size: 16px;
+}
+.box__content__table.table__content-adaptive{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    height: auto;
+    padding: 0 0 25px;
+    overflow: hidden;
+    margin: 20px 0 0;
+}
+.box__content__table.table__content-adaptive .box__table__item {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+}
+.box__content__table.table__content-adaptive .table__content-title h3 {
+    max-width: 75%;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.table__content-adaptive .row{
+    flex-wrap: nowrap;
+}
+.table__content-adaptive .col{
+    display: flex;
+    font-size: 14px;
+    flex: 1 0 105px;
+    width: 105px;
+    max-width: 105px;
+}
+.table__content-adaptive .table__content-title .col .btn__sorting{
+    align-self: flex-end;
+}
+.table__content-adaptive .table__content-title .row:first-child{
+    align-items: flex-end;
+}
+.box__content__table.table__content-adaptive  .box__table__item .box__item-content .row>div[class*=col]:last-child, 
+.box__content__table.table__content-adaptive  .box__table__item .box__item .row>div[class*=col]:last-child{
+    padding: 0 15px 0 0;
+}
+.table__content-adaptive .table__content-title .col .btn__sorting button{
+    top: -3px;
+}
+.box__tabs-type{
+    position: relative;
+    display: block;
+    margin: 30px 0;
+}
+.box__tabs-type ul{
+    list-style-type: none;
+    margin: 30px 0 0;
+    padding: 0;
+}
+.box__tabs-type ul:first-child{
+    margin: 0;
+}
+.box__tabs-type ul li{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.box__tabs-type ul li:not(:last-child){
+    margin: 0 30px 0 0;
+}
+.box__tabs-type ul li a{
+    font-size: 16px;
+    line-height: 24px;
+    color: #8A8A99;
+}
+.box__tabs-type ul li.active a{
+    color: #000000;
+    font-weight: 600;
+}
+.box__integration {
+    position: relative;
+    display: block;
+    margin: 30px 0;
+}
+.box__token span{
+    padding: 2px 8px 3px;
+    font-size: 14px;
+    border-radius: 6px;
+    line-height: 1;
+    color: #fff;
+    background-color: #5032C8;
+}

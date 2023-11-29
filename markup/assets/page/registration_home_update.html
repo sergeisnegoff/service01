@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>Регистрация - выбор роли</title>
+
+    ${require('../components/head/head.html')}
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+    
+        ${require('../components/header/header.html')}
+        
+        <div class="box__app__content">
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+				
+					<div class="box__form-centred">
+					    <div class="wrapper-form">
+					        <div class="row">
+					            <div class="col-12"><h1>Регистрация</h1></div>
+					        </div>
+					        <div class="box__form">
+					            <form>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="box__input box__input-registration"><input type="text" placeholder="Ф.И.О"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="box__input"><input type="text" data-phone autocomplete="tel"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12"><div class="btn"><button>Отправить запрос</button></div></div>
+                                    </div>	
+                                </form>
+					        </div>				        
+                            <div class="row">
+					            <div class="col-12"><div class="btn-link"><a href="#">Войти</a></div></div>
+					        </div>
+					    </div>
+					</div>
+
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>
+
+

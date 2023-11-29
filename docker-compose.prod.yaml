@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+    varnish:
+        restart: always
+        ports:
+            - "${HTTP_HOST}:${HTTP_PORT}:80"
+
+    nginx:
+        restart: always
+
+    backend:
+        restart: always
+        volumes:
+            - ./app/docker/php/php-fpm.prod.conf:/usr/local/etc/php-fpm.d/zzz-prod.conf:cached
+
+    frontend:
+        restart: always
+
+    imgproxy:
+        restart: always
+
+    mercure:
+        restart: always
+
+    rabbitmq:
+        restart: always
+
+    messenger:
+        restart: always

@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+
+rm -rf ./backend/var/propel/migrations
+docker-compose run --rm --no-deps -T backend php bin/console propel:migration:diff
+docker-compose run --rm --no-deps -T backend php bin/console propel:migration:migrate

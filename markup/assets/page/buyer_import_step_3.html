@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>Покупатель/Импорт из номенклатуры. Шаг 3</title>
+
+    ${require('../components/head/head.html')}
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+       
+        ${require('../components/header-buyer/header.html')}
+        
+        <div class="box__app__content">
+           
+            <div class="box__app__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="box__breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Покупатель</a></li>
+                                    <li>Импорт из номенклатуры. Шаг 3</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            ${require('../components/profile/profile.html')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+                    
+                    <section class="box__buyers__page">
+					    <div class="container">
+					        <div class="row">
+					            <div class="col-5">
+					                <h1>Импорт товаров</h1>
+					            </div>
+					            <div class="col-7">
+					                <div class="wraapper__button-nowrap content__justify-end">
+					                    <div class="btn btn__icons"><button><span style="background-image: url(${require('../img/icon/table-arrow-left.svg')});"></span>Назад</button></div>
+					                    <div class="btn btn__icons"><button><span style="background-image: url(${require('../img/icon/table-arrow-right.svg')});"></span>Начать импорт</button></div>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__tabs">
+                                        <ul>
+                                            <li><a href="#">1. Выбор файла</a></li>
+                                            <li><a href="#">2. Сопоставление</a></li>
+                                            <li class="active">3. Импорт товаров</li>
+                                        </ul>
+                                    </div>
+					            </div>
+					        </div>
+					        <div class="row margin-15">
+					            <div class="col-3">
+					                <h4>Уникальный идентификатор</h4>
+					                <div class="box__select">
+                                        <select>
+                                            <option value="1-1" selected="selected">Выбрать идентификатор</option>
+                                            <option value="1-2">Идентификатор 1.1</option>
+                                            <option value="1-3">Идентификатор 1.2</option>
+                                            <option value="2-1">Идентификатор 1.3</option>
+                                            <option value="2-2">Идентификатор 1.4</option>
+                                        </select>
+                                        <span class="text__select-sub">Идентификатор, по которому мы понимаем что товар уникальный</span>
+                                    </div>
+					            </div>
+					        </div>
+					        <br/>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__checkbox">
+                                        <div class="wrapper-checkbox">
+                                            <label>
+                                                <input type="checkbox" checked>
+                                                <span>
+                                                    <span class="box__checkbox-icon"></span>
+                                                    <span class="box__checkbox-text">Создать новые элементы содержащиеся в файле</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__checkbox">
+                                        <div class="wrapper-checkbox">
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>
+                                                    <span class="box__checkbox-icon"></span>
+                                                    <span class="box__checkbox-text">Удалить остальные элементы, которые не присутствуют в данном файле в выбранной категории</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__checkbox box__checkbox-step">
+                                        <div class="wrapper-checkbox">
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>
+                                                    <span class="box__checkbox-icon"></span>
+                                                    <span class="box__checkbox-text">Обновить существующие элементы информацией из файла</span>
+                                                </span>
+                                                <div class="box__checkbox">
+                                                    <div class="wrapper-checkbox">
+                                                        <label>
+                                                            <input type="checkbox">
+                                                            <span>
+                                                                <span class="box__checkbox-icon"></span>
+                                                                <span class="box__checkbox-text">Номенклатура</span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="box__checkbox">
+                                                    <div class="wrapper-checkbox">
+                                                        <label>
+                                                            <input type="checkbox">
+                                                            <span>
+                                                                <span class="box__checkbox-icon"></span>
+                                                                <span class="box__checkbox-text">Ед. измерения</span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="box__checkbox">
+                                                    <div class="wrapper-checkbox">
+                                                        <label>
+                                                            <input type="checkbox">
+                                                            <span>
+                                                                <span class="box__checkbox-icon"></span>
+                                                                <span class="box__checkbox-text">Штрихкод</span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+					            </div>
+					        </div>
+					    </div>
+					</section>
+                    
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>

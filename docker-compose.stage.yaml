@@ -1,0 +1,52 @@
+version: '3.4'
+
+services:
+    varnish:
+        restart: unless-stopped
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-mercure.rule=Host(`${CI_ENVIRONMENT_DOMAIN}`) && PathPrefix(`/.well-known/`)"
+            - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.rule=Host(`${CI_ENVIRONMENT_DOMAIN}`)"
+            - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.middlewares=auth"
+
+    mercure:
+        restart: unless-stopped
+
+    nginx:
+        restart: unless-stopped
+        volumes:
+            - /var/www/storage/$CI_PROJECT_NAME/public/uploads:/app/public/uploads:cached
+            - /var/www/storage/$CI_PROJECT_NAME/public/cache:/app/public/cache:cached
+
+    backend:
+        restart: unless-stopped
+        volumes:
+            - /var/www/storage/$CI_PROJECT_NAME/public/uploads:/app/public/uploads:cached
+            - /var/www/storage/$CI_PROJECT_NAME/public/cache:/app/public/cache:cached
+            - /var/www/storage/.composer/cache:/.composer/cache:cached
+
+    mailhog:
+        image: mailhog/mailhog
+        restart: unless-stopped
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-mailhog.rule=Host(`${MAILHOG_DOMAIN}`)"
+            - "traefik.http.services.${COMPOSE_PROJECT_NAME}-mailhog.loadbalancer.server.port=8025"
+            - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-mailhog.middlewares=auth"
+
+    imgproxy:
+        restart: unless-stopped
+        volumes:
+            - /var/www/storage/$CI_PROJECT_NAME/public/uploads:/app/uploads:cached
+            - /var/www/storage/$CI_PROJECT_NAME/public/cache:/app/cache:cached
+
+    markup:
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-markup.rule=Host(`${MARKUP_DOMAIN}`)"
+            - "traefik.http.services.${COMPOSE_PROJECT_NAME}-markup.loadbalancer.server.port=9000"
+            - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-markup.middlewares=auth"
+
+    messenger:
+        volumes:
+            - ./app/docker/messenger/supervisord.stage.conf:/etc/supervisord/supervisord.conf:cached

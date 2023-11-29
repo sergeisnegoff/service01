@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+docker-compose build backend
+docker-compose run --rm --no-deps -T backend composer install
+
+docker-compose build frontend
+docker-compose run --rm --no-deps -T frontend bash -c "npm install --no-save && npm run build"
+docker-compose up -d --force-recreate frontend

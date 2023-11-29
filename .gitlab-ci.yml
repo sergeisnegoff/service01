@@ -1,0 +1,90 @@
+variables:
+  GIT_CLONE_PATH: $CI_BUILDS_DIR/$CI_PROJECT_NAME/$CI_COMMIT_REF_NAME
+  GIT_STRATEGY: 'fetch'
+  GIT_CHECKOUT: 'true'
+  GIT_CLEAN_FLAGS: 'none'
+  GIT_DEPTH: 0
+
+stages:
+  - deploy
+
+deploy-review:
+  stage: deploy
+  variables:
+    CI_ENVIRONMENT_DOMAIN: $CI_PROJECT_NAME-$CI_COMMIT_REF_NAME.dev.creonit.ru
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    url: https://$CI_PROJECT_NAME-$CI_COMMIT_REF_NAME.dev.creonit.ru
+    on_stop: stop-review
+    auto_stop_in: 4 week
+  script:
+    - app/stage/build
+  only:
+    - branches
+  except:
+    - master
+    - develop
+    - preprod
+
+stop-review:
+  stage: deploy
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - docker-compose down --remove-orphans
+    - find -mindepth 1 -delete
+  when: manual
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    action: stop
+  only:
+    - branches
+  except:
+    - master
+    - develop
+    - preprod
+
+deploy-staging:
+  stage: deploy
+  variables:
+    CI_ENVIRONMENT_DOMAIN: $CI_PROJECT_NAME.dev.creonit.ru
+  environment:
+    name: staging
+    url: https://$CI_PROJECT_NAME.dev.creonit.ru
+  script:
+    - app/stage/build
+  only:
+    - develop
+
+deploy-preprod:
+  stage: deploy
+  variables:
+    CI_ENVIRONMENT_DOMAIN: smartpro.globus-ltd.ru
+  environment:
+    name: staging
+    url: https://smartpro.globus-ltd.ru
+  script:
+    - app/preprod/build
+  only:
+    - preprod
+
+.deploy-production:
+  stage: deploy
+  environment:
+    name: production
+    url: https://smartpro.ru/
+  variables:
+    GIT_STRATEGY: none
+  when: manual
+  only:
+    - master
+
+deploy-production:
+  extends: .deploy-production
+  script:
+    - ssh -o StrictHostKeyChecking=no www-root@195.19.97.59 -p10022 "cd /var/www/www-root/data/www/smartpro.ru && git pull && app/production/build"
+
+deploy-production-w-migration:
+  extends: .deploy-production
+  script:
+    - ssh -o StrictHostKeyChecking=no www-root@195.19.97.59 -p10022 "cd /var/www/www-root/data/www/smartpro.ru && app/production/database-backup && git pull && app/production/build && app/production/migrate"

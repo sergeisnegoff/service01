@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>Набор попапов</title>
+
+   ${require('../components/head/head.html')}
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+        
+        ${require('../components/header/header.html')}
+        
+        <div class="box__app__content">
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+				
+					<section>
+					    <div class="container">
+					        <div class="row">
+					            <div class="col-12">
+					                <br><br>
+                                    <h1>Попапы проекта</h1>
+                                    
+                                    <br><hr/><br>
+                                        <div class="btn"><button data-btn-popup="job-request">Запрос на работу</button></div><br>
+                                        <div class="btn"><button data-btn-popup="report-problem">Сообщить о проблеме</button></div><br>
+                                        <div class="btn"><button data-btn-popup="add-outlet">Добавить торговую точку</button></div><br>
+                                        <div class="btn"><button data-btn-popup="add-organisation">Добавить организацию</button></div><br>
+                                        <div class="btn"><button data-btn-popup="outlet">Тоговая точка</button></div><br>
+                                        <div class="btn"><button data-btn-popup="import-outlet">Импорт организаций торговых точек из SMART</button></div><br>
+                                        <div class="btn"><button data-btn-popup="import-outlet-conf">Импорт организаций торговых точек из SMART(подтверждение)</button></div><br>
+                                        <div class="btn"><button data-btn-popup="reason-refusal">Укажите причину отказа</button></div><br>
+                                        <div class="btn"><button data-btn-popup="edit-outlet">Редактировать торговую точку</button></div><br>
+                                        <div class="btn"><button data-btn-popup="add-rights">Добавить права</button></div><br>
+                                        <div class="btn"><button data-btn-popup="filter">Фильтрация</button></div>
+                                        <br>
+                                        <div class="btn"><button data-btn-popup="report-inaccuracies">Сообщить о неточности</button></div>
+                                        <br>
+                                        <div class="btn"><button data-btn-popup="reason-discrepancy">Причина расхождения</button></div>
+                                        <br>
+                                        <div class="btn"><button data-btn-popup="inn-warning">Компания с таким ИНН уже есть</button></div>
+                                        <br>
+                                        <div class="btn"><button data-btn-popup="edit-owner">Изменения владельца</button></div>
+                                        <br>
+                                        <div class="btn"><button data-btn-popup="edit-owner-warning">Изменения владельца(с предупреждением)</button></div>
+                                        <br>
+                                        <div class="btn"><button data-btn-popup="add-company">Добавить компанию</button></div>                                        
+                                        <br>
+                                        <div class="btn"><button data-btn-popup="filter__invoice">Фильтрация(накладной)</button></div>
+                                        <br>
+                                        <div class="btn"><button data-btn-popup="filter__invoice-col">Фильтрация(накладная/колонки)</button></div>
+                                        <br>
+                                        <div class="btn"><button data-btn-popup="registration">Регистрация(обновленная)</button></div>
+                                        <br>
+                                        <div class="btn"><button data-btn-popup="organization">Моя компании/организации</button></div>
+                                        <br>
+                                        <div class="btn"><button data-btn-popup="add-rights-tp">Добавить права(торговые точки)</button></div>
+                                    <br><hr/><br>
+                                    
+					            </div>
+					        </div>
+					    </div>
+					</section>
+
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>

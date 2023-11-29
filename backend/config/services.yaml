@@ -1,0 +1,91 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters: ~
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        bind:
+            $kernelProjectDir: '%kernel.project_dir%'
+            $kernelLogsDir: '%kernel.logs_dir%'
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+            - '../src/Tests/'
+            - '../src/Model/'
+
+    App\Service\:
+        resource: '../src/Service/*Service.php'
+        public: true
+        calls:
+            - ['setContainer', ['@service_container']]
+
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller/'
+        tags: ['controller.service_arguments']
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+    App\Normalizer\:
+        resource: '../src/Normalizer/*Normalizer.php'
+        calls:
+            - [setSerializer, ['@serializer']]
+        tags: ['serializer.normalizer']
+
+    App\Security\Role\RoleHierarchy:
+        parent: 'security.role_hierarchy'
+
+    App\Request\ParamConverter\:
+        resource: '../src/Request/ParamConverter/*ParamConverter.php'
+        public: true
+        autowire: true
+        tags:
+            - {name: 'request.param_converter'}
+
+    App\EventSubscriber\:
+        resource: '../src/EventSubscriber/*/*.Subscriber.php'
+        tags:
+            - {name: 'kernel.event_subscriber'}
+
+    App\EventListener\RestListener:
+        autowire: true
+        tags:
+            - {name: kernel.event_listener, event: kernel.exception, priority: 1}
+
+    App\EventPublisher\EventPublisher:
+        arguments:
+            $jwtKey: '%env(MERCURE_JWT_KEY)%'
+
+    App\Service\Smart\AbstractSmartClient:
+        arguments:
+            $login: '%env(SMART_LOGIN)%'
+            $password: '%env(SMART_PASSWORD)%'
+
+    App\Service\Smart\SmartClient:
+        parent: App\Service\Smart\AbstractSmartClient
+
+    App\Service\Mercury\MercuryTaskService:
+        tags:
+            - {name: kernel.event_listener, event: mercury.task.append, method: onMercuryTaskAppend}
+
+    App\Service\Megafon\MegafonService:
+        class: App\Service\Megafon\MegafonService
+        arguments:
+            $login: '%env(MEGAFON_LOGIN)%'
+            $password: '%env(MEGAFON_PASSWORD)%'
+            $from: '%env(MEGAFON_FROM)%'

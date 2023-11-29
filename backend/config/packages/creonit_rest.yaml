@@ -1,0 +1,17 @@
+creonit_rest:
+    path_patterns:
+        - '^/api'
+    spec:
+        components:
+            securitySchemes:
+                Token:
+                    type: apiKey
+                    in: header
+                    name: Token
+        security:
+            -   Token: []
+            -   DeviceId: []
+        paths:
+            /api/users/tokens:
+                post:
+                    security: []

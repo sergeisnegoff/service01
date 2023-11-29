@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+    db-szh:
+        image: mariadb:10
+        command: mysqld --sql-mode='' --max-prepared-stmt-count=65528 --innodb-flush-log-at-trx-commit=2 --character-set-server=utf8 --collation-server=utf8_general_ci
+        deploy:
+            replicas: 1
+            restart_policy:
+                condition: on-failure
+        volumes:
+            - szh:/var/lib/mysql:cached
+        ports:
+            - 32770:3306
+        environment:
+            MYSQL_USER: szh
+            MYSQL_PASSWORD: szh
+            MYSQL_ROOT_PASSWORD: szh
+            MYSQL_DATABASE: szh
+
+volumes:
+    szh:

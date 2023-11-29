@@ -1,0 +1,29 @@
+creonit_storage:
+    locales:
+        - ru
+
+    sections:
+        layout: { title: 'Каркас' }
+        myCompany: { title: 'Моя организация' }
+        systemApi: { title: 'Апи системы' }
+
+    items:
+        menuContacts:
+            title: 'Контакты в меню'
+            section: layout
+            fields:
+                email: { title: 'Email' }
+                phone: { title: 'Телефон' }
+
+        systemApiCommon:
+            title: 'Общее'
+            section: systemApi
+            fields:
+                title: { title: 'Заголовок' }
+                text: { title: 'Текст', type: 'textedit' }
+
+        myCompanyCommon:
+            title: 'Общее'
+            section: myCompany
+            fields:
+                noVerificationText: { title: 'Статус организации "не проверенная" / текст', type: 'textedit' }

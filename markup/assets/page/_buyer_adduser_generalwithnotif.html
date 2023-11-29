@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>Покупатель/Добавить пользователя/Общие</title>
+
+    ${require('../components/head/head.html')}
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+       
+        ${require('../components/header-buyer/header.html')}
+        
+        <div class="box__app__content">
+           
+            <div class="box__app__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="box__breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Покупатель</a></li>
+                                    <li><a href="#">Добавить пользователя</a></li>
+                                    <li>Общие</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            ${require('../components/profile/profile.html')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+                    
+                    <section class="box__buyers__page invoice-page">
+					    <div class="container">
+					        <div class="row">
+					            <div class="col-12">
+					                <h1>Добавить пользователя</h1>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-5">
+					                <div class="box__form">
+					                    <form action="">
+					                        <div class="row">
+					                            <div class="col-12 mt-15">89231652312</div>
+					                            <div class="col-12 mt-15">
+					                                <div class="box__form-alert">
+                                                        <div class="icon__alert"><span></span></div>
+                                                        <div class="description-alert">
+                                                            <p>Пользователь в системе не найден. <br/> Вы можете выслать приглашение на присоединение на указанный email или телефон</p>
+                                                        </div>
+                                                    </div>
+					                            </div>
+					                            <div class="col-12 mt-15">
+                                                    <div class="wraapper__button-nowrap content__justify-start">
+                                                        <div class="btn"><button>Назад</button></div>
+                                                        <div class="btn"><button>Выслать приглашение</button></div>
+                                                    </div>
+					                            </div>
+					                        </div>
+					                    </form>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+					</section>
+                    
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>

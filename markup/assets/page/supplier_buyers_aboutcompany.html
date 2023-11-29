@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>О компании/Организации и Торговые точки</title>
+
+    ${require('../components/head/head.html')}
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+       
+        ${require('../components/header-supplier/header.html')}
+        
+        <div class="box__app__content">
+           
+            <div class="box__app__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="box__breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Поставщик</a></li>
+                                    <li><a href="#">Покупатели</a></li>
+                                    <li>О компании</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            ${require('../components/profile/profile.html')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+				
+					<section class="box__buyers__page">
+					    <div class="container">
+					        <div class="row">
+					            <div class="col-9">
+					                <h1>Ребрышки и пиво</h1>
+					            </div>
+                                <div class="col-3">
+					                <div class="btn btn__icon-favorite btn-right"><button><span style="background-image: url(${require('../img/icon/to-favorites.svg')})"></span>В избранное</button></div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__tabs">
+                                        <ul>
+                                            <li class="active"><a href="#">О компании</a></li>
+                                            <li><a href="#">Организации и Торговые точки</a></li>
+                                        </ul>
+                                    </div>
+					            </div>
+					        </div>
+                            <div class="row content-aboutcompany">
+                               <div class="col-12 col-xl-6">
+                                    <div class="box__slider">
+                                        <div class="swiper-container gallery-top">
+                                            <div class="swiper-wrapper">
+                                              <div class="swiper-slide" style="background-image:url(${require('../img/image/slide_1.jpg')})"></div>
+                                              <div class="swiper-slide" style="background-image:url(${require('../img/image/slide_2.jpg')})"></div>
+                                              <div class="swiper-slide" style="background-image:url(${require('../img/image/slide_3.jpg')})"></div>
+                                              <div class="swiper-slide" style="background-image:url(${require('../img/image/slide_4.jpg')})"></div>
+                                            </div>
+                                            <!-- Add Arrows -->
+                                            <div class="swiper-button-next swiper-button-white"></div>
+                                            <div class="swiper-button-prev swiper-button-white"></div>
+                                          </div>
+                                          <div class="swiper-container gallery-thumbs">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide" style="background-image:url(${require('../img/image/slide_1.jpg')})"></div>
+                                                <div class="swiper-slide" style="background-image:url(${require('../img/image/slide_2.jpg')})"></div>
+                                                <div class="swiper-slide" style="background-image:url(${require('../img/image/slide_3.jpg')})"></div>
+                                                <div class="swiper-slide" style="background-image:url(${require('../img/image/slide_4.jpg')})"></div>
+                                            </div>
+                                          </div>   
+                                    </div>
+                               </div>
+                               <div class="col-12 col-xl-5">
+                                    <div class="box__form-alert">
+                                        <div class="icon__alert"><span></span></div>
+                                        <div class="description-alert">
+                                            <p>Мы бы хотели поработать с вашей компанией, у вас отличный ассортимент мяса</p>
+                                        </div>
+                                    </div>
+                                   <div class="box__company__logo"><a href="#"><img src="${require('../img/image/logo-company-1.jpg')}" alt=""></a></div>
+                                   <div class="box__company-site"><a href="#">rebroipivo.ru</a></div>
+                                   <div class="box__company-description"><p>Сеть ресторанов быстрого питания, рожденная в Сибири. Мы готовим и доставляем вкусную еду для вас, обеспечивая высокое качество по доступной цене. Компания стала обладателем награды «Торговля России 2019» в номинации «Лучший объект фастфуда», организованного Минпромторгом РФ. «Грильница» больше 8 лет является флагманом в сфере ресторанов быстрого питания на территории Алтайского края и теперь выходит на федеральный уровень, благодаря развитию сети по модели.</p></div>
+                                   <div class="box__company-comment">
+                                       <div class="box__form">
+                                           <form>
+                                                <div class="box__textarea">
+                                                   <textarea placeholder="Комментарий о копании"></textarea>
+                                                </div>
+                                                <div class="box__comment-prompt">Данный комментарий будет виден только для вас</div>
+                                               <div class="btn"><button>Отправить</button></div>
+                                           </form>
+                                       </div>
+                                   </div>
+                               </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>

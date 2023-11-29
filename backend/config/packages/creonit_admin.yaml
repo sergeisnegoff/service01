@@ -1,0 +1,12 @@
+creonit_admin:
+    title: 'Smart'
+    icon: ~
+    modules:
+        Supplier: {sort: 1}
+        Buyer: {sort: 2}
+        Forms: {sort: 3}
+        Storage: {sort: 4}
+        User: {sort: 5}
+        Page: {sort: 6}
+        ApiRequestLog: {sort: 99998}
+        Mailing: {sort: 99999}

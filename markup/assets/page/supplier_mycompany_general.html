@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>Поставщик/Моя компания/Общие</title>
+
+    ${require('../components/head/head.html')}
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+       
+        ${require('../components/header-supplier/header.html')}
+        
+        <div class="box__app__content">
+           
+            <div class="box__app__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="box__breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Поставщик</a></li>
+                                    <li><a href="#">Моя компания</a></li>
+                                    <li>Общие</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            ${require('../components/profile/profile.html')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+                    
+                    <section class="box__companyuser__page">
+					    <div class="container">
+					        <div class="row">
+					            <div class="col-9">
+					                <h1>Моя компания</h1>
+					            </div>
+					            <div class="col-3">
+					                <div class="btn text-right"><button>Сохранить</button></div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__tabs">
+                                        <ul>
+                                            <li class="active"><a href="#">Общие</a></li>
+                                            <li><a href="#">Пользователи</a></li>
+                                            <li><a href="#">Меркурий</a></li>
+                                        </ul>
+                                    </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__form box__form-company">
+					                    <form>
+                                            <div class="row">
+					                            <div class="col-5">
+					                                <h3>Логотип компании</h3>
+                                                </div>
+                                            </div>
+					                        <div class="row">
+					                            <div class="col-5">
+					                                <div class="box__input-file input-logo">
+                                                        <input type="file" name="Files[]" />
+                                                    </div>
+					                            </div>
+					                        </div>
+					                        <div class="row">
+					                            <div class="col-5">
+					                                <h3>Основные</h3>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+					                            <div class="col-5">
+					                                <div class="box__input">
+					                                    <input type="text" placeholder="Название компании">
+					                                </div>					                                
+                                                    <div class="box__input">
+					                                    <input type="text" placeholder="ИНН">
+					                                </div>                                                    
+                                                    <div class="box__input">
+					                                    <input type="text" placeholder="КПП">
+					                                </div>
+                                                    <div class="box__input">
+					                                    <input type="text" placeholder="Сайт">
+					                                </div>
+                                                    <div class="box__input">
+					                                    <input type="text" placeholder="Товарные группы">
+					                                </div>
+					                                <div class="box__textarea">
+					                                    <textarea name="" id="" cols="30" rows="6" placeholder="Описание компании"></textarea>
+					                                </div>
+					                            </div>
+					                            <div class="col-5 offset-1">
+					                                <div class="box__form-alert">
+					                                    <div class="icon__alert"><span></span></div>
+					                                    <h4>Статус моей компании <span>не проверенная</span></h4>
+					                                    <div class="description-alert">
+					                                        <p>После заполнения информации о компании, для полноценного использования сервиса и возможности, чтобы покупатели могли начать работу с вами необходимо отправить заявку, для проверки информации о компании модератором</p>
+					                                    </div>
+					                                    <div class="btn"><a href="#">Оправить заявку</a></div>
+					                                </div>
+					                            </div>
+					                        </div>
+					                        <div class="row">
+					                            <div class="col-5">
+					                                <h3>Галерея</h3>
+					                                <div class="box__input-file input-gallery">
+                                                        <input type="file" name="Files[]" multiple="multiple" />
+                                                    </div>
+					                            </div>
+					                        </div>
+                                            <div class="row">
+					                            <div class="col-5">
+					                                <h3>Доставка</h3>
+					                                <div class="box__textarea">
+					                                    <textarea name="" id="" cols="30" rows="6" placeholder="Условия доставки"></textarea>
+					                                </div>
+					                            </div>
+					                        </div>
+                                            <div class="row">
+					                            <div class="col-5">
+					                                <h3>Оплата</h3>
+					                                <div class="box__textarea">
+					                                    <textarea name="" id="" cols="30" rows="6" placeholder="Условия оплаты"></textarea>
+					                                </div>
+					                                <div class="box__input">
+					                                    <input type="text" placeholder="Минимальная сумма заказа">
+					                                </div>  
+					                            </div>
+					                        </div>
+					                    </form>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+					</section>
+                    
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>

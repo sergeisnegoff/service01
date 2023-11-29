@@ -1,0 +1,57 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/security.html
+security:
+    enable_authenticator_manager: true
+
+    # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        memory_users:
+            memory:
+                users:
+                    admin: { password: '%env(ADMIN_PASSWORD)%', roles: ['ROLE_ADMIN'] }
+        users:
+            id: App\Security\UserProvider
+
+        all_users:
+            chain:
+                providers: ['memory_users', 'users']
+
+    encoders:
+        App\Model\User: 'sha256'
+        Symfony\Component\Security\Core\User\User: 'plaintext'
+
+    role_hierarchy:
+        ROLE_ADMIN:
+        ROLE_BUYER:
+        ROLE_SUPPLIER:
+        ROLE_MODERATOR:
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        admin:
+            pattern:  ^/admin
+            provider: all_users
+            form_login:
+                login_path: admin_login
+                check_path: admin_login
+            logout:
+                path: admin_logout
+                target: creonit_admin_index
+            remember_me:
+                name: ADMIN_REMEMBERME
+                secret: '%kernel.secret%'
+                lifetime: 604800
+
+        main:
+            stateless: true
+            provider: users
+            custom_authenticators:
+                - App\Security\ApiKeyAuthenticator
+
+    access_control:
+        - { path: ^/admin/login, roles: PUBLIC_ACCESS }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/openapi, roles: PUBLIC_ACCESS }

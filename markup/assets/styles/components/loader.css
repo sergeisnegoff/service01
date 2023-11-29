@@ -1,0 +1,112 @@
+@layer base {
+    .-loading {
+        &,
+        &-mini,
+        &-micro {
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: -1px;
+                right: -1px;
+                bottom: -1px;
+                left: -1px;
+
+                background: rgba(255, 255, 255, 0.8);
+
+                z-index: 10;
+
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                display: block;
+                background: url('/images/loader.svg');
+
+                animation-name: animation-loading;
+                animation-iteration-count: infinite;
+                animation-duration: 1s;
+
+                z-index: 20;
+            }
+        }
+
+        &:after {
+            top: calc(50% - 32px);
+            left: calc(50% - 32px);
+            width: 64px;
+            height: 64px;
+        }
+
+        &-mini {
+            &:after {
+                top: calc(50% - 12px);
+                left: calc(50% - 12px);
+                width: 24px;
+                height: 24px;
+                background-size: 24px 24px;
+            }
+        }
+
+        &-micro {
+            &:after {
+                top: calc(50% - 6px);
+                left: calc(50% - 6px);
+                width: 12px;
+                height: 12px;
+                background-size: 12px 12px;
+            }
+        }
+    }
+    .-loading_clean {
+        &::before {
+            content: none;
+        }
+    }
+    .-loading_placeholder {
+        min-width: 64px;
+        min-height: 64px;
+        &::before {
+            content: none;
+        }
+    }
+    .-loading_placeholder-big {
+        min-width: 64px;
+        min-height: 250px;
+        &::before {
+             content: none;
+         }
+    }
+    .-loading-mini.-loading_placeholder {
+        min-width: 24px;
+        min-height: 24px;
+    }
+    .-loading-micro.-loading_placeholder {
+        min-width: 12px;
+        min-height: 12px;
+    }
+
+    .-loading_gap {
+        margin: 24px;
+    }
+
+    .-loading_cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    @keyframes animation-loading {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+}

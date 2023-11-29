@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>Покупатель/Накладные</title>
+
+    ${require('../components/head/head.html')}
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+       
+        ${require('../components/header-buyer/header.html')}
+        
+        <div class="box__app__content">
+           
+            <div class="box__app__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="box__breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Покупатель</a></li>
+                                    <li>Накладные</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            ${require('../components/profile/profile.html')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+                    
+                    <section class="box__buyers__page invoice-page">
+					    <div class="container">
+					        <div class="row">
+					            <div class="col-7">
+					                <h1>Накладные</h1>
+					            </div>
+					            <div class="col-5">
+					                <div class="wraapper__button-nowrap content__justify-end">
+					                    <div class="btn btn__icons"><button><span style="background-image: url(${require('../img/icon/table-dollar.svg')});"></span>Напечатать ценники</button></div>
+					                    <div class="btn btn__icons"><button><span style="background-image: url(${require('../img/icon/table-columns.svg')});"></span>Колонки</button></div>
+					                    <div class="btn btn__icons"><button><span style="background-image: url(${require('../img/icon/table-filter.svg')});"></span>Фильтрация</button></div>
+					                </div>
+					            </div>
+					        </div>
+					        <br>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__content__table table-invoice-page">
+                                       <div class="table__content-title box__table-sorting box__table-export">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <div class="box__checkbox">
+                                                        <div class="wrapper-checkbox">
+                                                            <label>
+                                                                <input type="checkbox">
+                                                                <span>
+                                                                    <span class="box__checkbox-icon"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box__icon wraapper__button-nowrap content__justify-center">
+                                                        <div class="btn__table-icon">
+                                                            <button data-tippy-content="Выгружен/невыгружен"><span style="background-image: url(${require('../img/icon/table-delivery.svg')});"></span></button>
+                                                            <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                        </div>
+                                                        <div class="btn__table-icon">
+                                                            <button data-tippy-content="Выгружен/невыгружен"><span style="background-image: url(${require('../img/icon/table-care.svg')});"></span></button>
+                                                            <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                        </div>
+                                                        <div class="btn__table-icon">
+                                                            <button data-tippy-content="Выгружен/невыгружен">ЕГАИС</button>
+                                                            <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <h3>№ наладной<br/>поставщика</h3>
+                                                    <div class="btn__sorting btn__sorting-ascending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col-1">
+                                                    <h3>Дата</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <h3>Поставщик</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <h3>Покупатель<br>Организация</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <h3>Покупатель<br>Торговая точка</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col-1">
+                                                    <h3>Сумма</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table__content">
+                                            <div class="box__table__item box__table-export">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col-2">
+                                                            <div class="box__checkbox">
+                                                                <div class="wrapper-checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox" checked>
+                                                                        <span>
+                                                                            <span class="box__checkbox-icon"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="box__icon wraapper__button-nowrap content__justify-center">
+                                                                <div class="box__checkbox-table">
+                                                                    <div class="wrapper-checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox" checked>
+                                                                            <span>
+                                                                                <span class="box__checkbox-icon"></span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="box__checkbox-table">
+                                                                    <div class="wrapper-checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox" checked>
+                                                                            <span>
+                                                                                <span class="box__checkbox-icon"></span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="box__checkbox-table">
+                                                                    <div class="wrapper-checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox" checked>
+                                                                            <span>
+                                                                                <span class="box__checkbox-icon"></span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-2">6345</div>
+                                                        <div class="col-1">27.09.20</div>
+                                                        <div class="col-2">Поставщик 1</div>
+                                                        <div class="col-2">Организация 1</div>
+                                                        <div class="col-2">Торговая точка 1</div>
+                                                        <div class="col-1">150 000</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item box__table-export table__item-warning">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col-2">
+                                                            <div class="box__checkbox">
+                                                                <div class="wrapper-checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox" checked>
+                                                                        <span>
+                                                                            <span class="box__checkbox-icon"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="box__icon wraapper__button-nowrap content__justify-center">
+                                                                <div class="box__checkbox-table">
+                                                                    <div class="wrapper-checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox" checked>
+                                                                            <span>
+                                                                                <span class="box__checkbox-icon"></span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="box__checkbox-table">
+                                                                    <div class="wrapper-checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox" checked>
+                                                                            <span>
+                                                                                <span class="box__checkbox-icon"></span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="box__checkbox-table">
+                                                                    <div class="wrapper-checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox" checked>
+                                                                            <span>
+                                                                                <span class="box__checkbox-icon"></span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-2">6345</div>
+                                                        <div class="col-1">27.09.20</div>
+                                                        <div class="col-2">Поставщик 1</div>
+                                                        <div class="col-2">Организация 1</div>
+                                                        <div class="col-2">Торговая точка 1</div>
+                                                        <div class="col-1">150 000</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item box__table-export">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col-2">
+                                                            <div class="box__checkbox">
+                                                                <div class="wrapper-checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox" checked>
+                                                                        <span>
+                                                                            <span class="box__checkbox-icon"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="box__icon wraapper__button-nowrap content__justify-center">
+                                                                <div class="box__checkbox-table">
+                                                                    <div class="wrapper-checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox" checked>
+                                                                            <span>
+                                                                                <span class="box__checkbox-icon"></span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="box__checkbox-table">
+                                                                    <div class="wrapper-checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox" checked>
+                                                                            <span>
+                                                                                <span class="box__checkbox-icon"></span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="box__checkbox-table">
+                                                                    <div class="wrapper-checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox" checked>
+                                                                            <span>
+                                                                                <span class="box__checkbox-icon"></span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-2">6345</div>
+                                                        <div class="col-1">27.09.20</div>
+                                                        <div class="col-2">Поставщик 1</div>
+                                                        <div class="col-2">Организация 1</div>
+                                                        <div class="col-2">Торговая точка 1</div>
+                                                        <div class="col-1">150 000</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+					            </div>
+					        </div>
+					    </div>
+					</section>    
+                    
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>

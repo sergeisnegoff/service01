@@ -1,0 +1,10 @@
+:root {
+    --container-margin: 78px;
+    --container-max-width: 1100px;
+}
+
+@screen sm {
+    :root {
+        --container-margin: 32px;
+    }
+}

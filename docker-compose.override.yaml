@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+    varnish:
+        ports:
+            - "${HTTP_HOST}:${HTTP_PORT}:80"
+
+    mailhog:
+        image: mailhog/mailhog
+        ports:
+            - "${MAILHOG_HTTP_HOST}:${MAILHOG_HTTP_PORT}:8025"
+
+    frontend:
+        command: bash -c "npm install --no-save && npm run dev"
+
+    markup:
+        ports:
+            - "9005:9000"
+
+    rabbitmq:
+        ports:
+            - "15672:15672"
+
+    messenger:
+        volumes:
+            - ./app/docker/messenger/supervisord.stage.conf:/etc/supervisord/supervisord.conf:cached

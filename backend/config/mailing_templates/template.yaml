@@ -1,0 +1,63 @@
+verification_request_status:
+    title: 'Смена статуса заявки'
+    from:
+        email: 'help@smartpro.ru'
+        name: 'Smart'
+    subject: 'Смена статуса заявки'
+    template: '<div>Организация "{{ company }}". Текущий статус заявки: {{ status }}</div>'
+
+invite_company_user:
+    title: 'Приглашение пользователя'
+    from:
+        email: 'help@smartpro.ru'
+        name: 'Smart'
+    subject: 'Приглашение пользователя'
+    template: '<div>Вас пригласили для прохождения процесса регистрации. <a href="{{ link }}">Зарегистрироваться</a></div>'
+
+new_job_request:
+    title: 'Новая заявка'
+    from:
+        email: 'help@smartpro.ru'
+        name: 'Smart'
+    subject: 'Новая заявка'
+    template: '<div>{{ message }}</div>'
+
+invoiceAccept:
+    title: 'Накладная принята'
+    from:
+        email: 'help@smartpro.ru'
+        name: 'Smart'
+    subject: 'Накладная принята'
+    template: '<div>У вас на сайте новое уведомление: {% if text %} {{ text }} {% endif %} {% if link %} <a href="{{ link }}">Ссылка</a> {% endif%}</div>'
+
+invoiceNotCompletely:
+    title: 'Накладная принята не полностью'
+    from:
+        email: 'help@smartpro.ru'
+        name: 'Smart'
+    subject: 'Накладная принята не полностью'
+    template: '<div>У вас на сайте новое уведомление: {% if text %} {{ text }} {% endif %} {% if link %} <a href="{{ link }}">Ссылка</a> {% endif%}</div>'
+
+invoiceCancel:
+    title: 'Накладная отклонена'
+    from:
+        email: 'help@smartpro.ru'
+        name: 'Smart'
+    subject: 'Накладная отклонена'
+    template: '<div>У вас на сайте новое уведомление: {% if text %} {{ text }} {% endif %} {% if link %} <a href="{{ link }}">Ссылка</a> {% endif%}</div>'
+
+mercuryProblem:
+    title: 'Сообщить о проблеме Меркурий'
+    from:
+        email: 'help@smartpro.ru'
+        name: 'Smart'
+    subject: 'Проблема со справкой'
+    template: '<div>Покупатель: {{ buyerTitle }}. Причина: {{ reason }}</div><br/><table><tr><th>Отправитель</th><th>Получатель</th><th>Название товара</th><th>Статус документа</th><th>Дата оформления</th><th>Внешний код</th><th>Номер накладной</th><th>Количество</th></tr>{% for item in items %}<tr><td>{{ item.sender }}</td><td>{{ item.recipient }}</td><td>{{ item.productTitle }}</td><td>{{ item.status }}</td><td>{{ item.issueDate | date("d.m.Y") }}</td><td>{{ item.uuid }}</td><td>{{ item.waybillNumber }}</td><td>{{ item.productQuantity }}</td></tr>{% endfor %}</table>'
+
+new_notification:
+    title: 'Новое уведомление'
+    from:
+        email: 'help@smartpro.ru'
+        name: 'Smart'
+    subject: 'Новое уведомление'
+    template: '<div>У вас на сайте новое уведомление: {% if text %} {{ text }} {% endif %} {% if link %} <a href="{{ link }}">Ссылка</a> {% endif%}</div>'

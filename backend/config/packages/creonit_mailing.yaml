@@ -1,0 +1,6 @@
+creonit_mailing:
+    from: 'help@smartpro.ru'
+    base_template: 'mail/base.html.twig'
+    templates_path: '%kernel.project_dir%/config/mailing_templates'
+    globals:
+        parameter: 'value'

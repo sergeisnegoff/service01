@@ -1,0 +1,122 @@
+.is-layer-locked {
+    @apply fixed top-0 bottom-0 w-full pointer-events-none;
+}
+
+.layer-blackout {
+    @apply fixed top-0 left-0 right-0 bottom-0 transition-opacity duration-300 ease-out;
+    transform-style: preserve-3d;
+    background-color: rgba(0, 0, 0, .75);
+}
+.layer-blackout_hidden {
+    @apply opacity-0 pointer-events-none;
+}
+
+.layer {
+    @apply flex items-center justify-center absolute top-0 left-0 right-0 min-h-full pointer-events-none;
+    z-index: 1201;
+
+    &__wrapper {
+        flex: 1;
+        position: relative;
+        max-width: 490px;
+        background-color: #fff;
+        border-radius: 5px;
+        pointer-events: all;
+    }
+
+    &__close {
+        cursor: pointer;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: -40px;
+        right: -40px;
+        transition-duration: 200ms;
+    }
+    &__close svg {
+        fill: #000;
+    }
+}
+
+.layer_width_big {
+    .layer__wrapper {
+        max-width: 1100px;
+    }
+}
+
+.layer-blackout {
+    z-index: 1200;
+}
+
+.layer_back {
+    @apply fixed;
+    @apply transition-none animate-none invisible pointer-events-none opacity-0 !important;
+}
+
+.layer_hidden {
+    @apply hidden;
+}
+
+.layer-container {
+    @apply relative pointer-events-auto;
+}
+
+.layer.layer-leave-active .layer-container,
+.layer_back .layer-container {
+    @apply pointer-events-none;
+}
+
+.layer.layer-enter-active,
+.layer.layer-leave-active {
+    @apply fixed;
+}
+
+.layer-enter-active.layer, .layer-leave-active.layer {
+    animation-duration: .3s;
+}
+.layer-enter-active.layer > .layer__wrapper {
+    animation-duration: .3s;
+    animation-name: layer-show;
+}
+
+.layer-leave-active.layer > .layer__wrapper {
+    animation-duration: .4s;
+    animation-name: layer-hide;
+}
+
+.layer_right,
+.layer_left {
+    justify-content: flex-end;
+    align-items: stretch;
+
+    .layer {
+        &__wrapper {
+            border-radius: 0;
+        }
+    }
+}
+.layer_right {
+    .layer__close {
+        @apply right-3 top-3 z-10;
+     }
+}
+
+.layer_right.layer-enter-active.layer > .layer__wrapper {
+    animation-duration: .3s;
+    animation-name: fade-from-right;
+}
+
+.layer_right.layer-leave-active.layer > .layer__wrapper {
+    animation-duration: .4s;
+    animation-name: fade-right;
+}
+
+.layer_left.layer-enter-active.layer > .layer__wrapper {
+    animation-duration: .3s;
+    animation-name: fade-from-left;
+}
+
+.layer_left.layer-leave-active.layer > .layer__wrapper {
+    animation-duration: .4s;
+    animation-name: fade-left;
+}

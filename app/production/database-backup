@@ -1,0 +1,5 @@
+#!/bin/sh
+set -e
+source ./.env
+
+mysqldump -u"${DATABASE_USER}" -p"${DATABASE_PASSWORD}" $DATABASE_NAME | gzip > ./backend/var/database-backup.sql.gz

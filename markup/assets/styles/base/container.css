@@ -1,0 +1,10 @@
+@layer base {
+    @responsive {
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+            width: calc(100vw - var(--container-margin));
+            max-width: var(--container-max-width);
+        }
+    }
+}

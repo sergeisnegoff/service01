@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>Модератор/Все</title>
+
+    ${require('../components/head/head.html')}
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+       
+        ${require('../components/header-moderator/header.html')}
+        
+        <div class="box__app__content">
+           
+            <div class="box__app__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="box__breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Модератор</a></li>
+                                    <li>Все</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            ${require('../components/profile/profile.html')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+				
+					<section class="box__moderator__page">
+					    <div class="container">
+					        <div class="row">
+					            <div class="col-9">
+					                <h1>Заявки</h1>
+					            </div>
+					            <div class="col-3">
+					                <div class="box__search">
+					                    <form>
+					                        <div class="box__input"><input type="text" placeholder="Найти покупателя"></div>
+					                        <div class="btn__search"><button></button></div>
+					                    </form>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__tabs">
+                                        <ul>
+                                            <li class="active"><a href="#">Все<span>12</span></a></li>
+                                            <li><a href="#">Подтвержденные</a></li>
+                                            <li><a href="#">Черный список</a></li>
+                                        </ul>
+                                    </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__content__table">
+                                        <div class="table__content-title">
+                                            <div class="row">
+                                                <div class="col-1"><h3>№</h3></div>
+                                                <div class="col-4"><h3>Название</h3></div>
+                                                <div class="col-3"><h3>Дата заявки</h3></div>
+                                                <div class="col-4"><h3>Действия</h3></div>
+                                            </div>
+                                        </div>
+                                        <div class="table__content">
+                                            <div class="box__table__item">
+                                                <div class="box__item">
+                                                    <div class="row">
+                                                        <div class="col-1">1</div>
+                                                        <div class="col-4">Ребрышко и пиво</div>
+                                                        <div class="col-3">12 сентября 2020 в 12:56</div>
+                                                        <div class="col-4">
+                                                            <div class="wraapper__button-nowrap">
+                                                                <div class="btn btn-green"><button>Принять</button></div>
+                                                                <div class="btn btn-red"><button>Отказать</button></div>
+                                                                <div class="btn"><button>Заблокировать</button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item">
+                                                    <div class="row">
+                                                        <div class="col-1">2</div>
+                                                        <div class="col-4">Ребрышко и пиво</div>
+                                                        <div class="col-3">12 сентября 2020 в 12:56</div>
+                                                        <div class="col-4">
+                                                            <div class="wraapper__button-nowrap">
+                                                                <div class="btn btn-green"><button>Принять</button></div>
+                                                                <div class="btn btn-red"><button>Отказать</button></div>
+                                                                <div class="btn"><button>Заблокировать</button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item">
+                                                    <div class="row">
+                                                        <div class="col-1">3</div>
+                                                        <div class="col-4">Ребрышко и пиво</div>
+                                                        <div class="col-3">12 сентября 2020 в 12:56</div>
+                                                        <div class="col-4">
+                                                            <div class="wraapper__button-nowrap">
+                                                                <div class="btn btn-green"><button>Принять</button></div>
+                                                                <div class="btn btn-red"><button>Отказать</button></div>
+                                                                <div class="btn"><button>Заблокировать</button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item">
+                                                    <div class="row">
+                                                        <div class="col-1">4</div>
+                                                        <div class="col-4">Ребрышко и пиво</div>
+                                                        <div class="col-3">12 сентября 2020 в 12:56</div>
+                                                        <div class="col-4">
+                                                            <div class="wraapper__button-nowrap">
+                                                                <div class="btn btn-green"><button>Принять</button></div>
+                                                                <div class="btn btn-red"><button>Отказать</button></div>
+                                                                <div class="btn"><button>Заблокировать</button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item">
+                                                    <div class="row">
+                                                        <div class="col-1">5</div>
+                                                        <div class="col-4">Ребрышко и пиво</div>
+                                                        <div class="col-3">12 сентября 2020 в 12:56</div>
+                                                        <div class="col-4">
+                                                            <div class="wraapper__button-nowrap">
+                                                                <div class="btn btn-green"><button>Принять</button></div>
+                                                                <div class="btn btn-red"><button>Отказать</button></div>
+                                                                <div class="btn"><button>Заблокировать</button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table__content-bottom">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="box__pagination">
+                                                        <ul>
+                                                            <li class="prev"><a href="#"><span></span></a></li>
+                                                            <li><a href="#">1</a></li>
+                                                            <li><a href="#">2</a></li>
+                                                            <li class="active"><a href="#">3</a></li>
+                                                            <li><a href="#">4</a></li>
+                                                            <li><a href="#">...</a></li>
+                                                            <li><a href="#">7</a></li>
+                                                            <li class="next"><a href="#"><span></span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+					            </div>
+					        </div>
+					    </div>
+					</section>
+
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>

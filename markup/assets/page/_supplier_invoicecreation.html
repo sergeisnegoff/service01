@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>Поставщик/Создание накладной</title>
+
+    ${require('../components/head/head.html')}
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+       
+        ${require('../components/header-supplier-update/header.html')}
+        
+        <div class="box__app__content">
+           
+            <div class="box__app__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="box__breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Покупатель</a></li>
+                                    <li>Создание накладной</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            ${require('../components/profile/profile.html')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+                    
+                    <section class="box__buyers__page invoice-page">
+					    <div class="container">
+					        <div class="row">
+					            <div class="col-12">
+					                <h1>Создание накладной</h1>
+					            </div>
+					        </div>
+					        <div class="row mt-30 align-center">
+					            <div class="col-4">
+					               <div class="box__select">
+                                        <select>
+                                            <option value="1-1" selected="selected">Покупатель</option>
+                                            <option value="1-2">Покупатель-1</option>
+                                            <option value="1-2">Покупатель-2</option>
+                                            <option value="1-2">Покупатель-3</option>
+                                        </select>
+                                    </div>
+					            </div>
+					            <div class="col-4">
+					               <div class="box__select">
+                                        <select>
+                                            <option value="1-1" selected="selected">Торговая точка</option>
+                                            <option value="1-2">Торговая точка-1</option>
+                                            <option value="1-2">Торговая точка-2</option>
+                                            <option value="1-2">Торговая точка-3</option>
+                                        </select>
+                                    </div>
+					            </div>
+					            <div class="col-4">
+					                <div class="wraapper__button-nowrap">
+					                    <div class="btn btn__icons"><button><span style="background-image: url(${require('../img/icon/table-add.svg')});"></span>Добавить товар</button></div>
+					                    <div class="btn btn-green btn__icons"><button><span style="background-image: url(${require('../img/icon/table-accept.svg')});"></span>Сохранить</button></div>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__content__table table-invoice table-nocontrols">
+                                       <div class="table__content-title box__table-sorting" style="width:100%">
+                                            <div class="row">
+                                                <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">
+                                                    <h3 data-tippy-content="№">№</h3><div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col" style="width: 20%; max-width: 20%; flex-basis: 20%;">
+                                                    <h3 data-tippy-content="Наименование">Наименование</h3>
+                                                    <div class="btn__sorting btn__sorting-ascending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                    <h3 data-tippy-content="Ед.изм.">Ед.изм.</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">
+                                                    <h3 data-tippy-content="Кол.">Кол.</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                    <h3 data-tippy-content="Цена">Цена</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                    <h3 data-tippy-content="Сумма">Сумма</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                    <h3 data-tippy-content="Ставка НДС">Ставка НДС</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                    <h3 data-tippy-content="Сумма НДС">Сумма НДС</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                    <h3 data-tippy-content="Действие">Действие</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table__content" style="position: relative;height: calc(100vh - 410px); min-height: 500px" data-customScrollY>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">1</div>
+                                                        <div class="col" style="width: 20%; max-width: 20%; flex-basis: 20%;">
+                                                            <div class="box__input"><input type="text" placeholder="Наименование" data-autocomplete></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ед. изм.</option>
+                                                                    <option value="1-2">Ед. изм.-1</option>
+                                                                    <option value="1-2">Ед. изм.-2</option>
+                                                                    <option value="1-2">Ед. изм.-3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Количество" value="6"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Цена" value="1 400.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 800.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ставка НДС</option>
+                                                                    <option value="1-2">10%</option>
+                                                                    <option value="1-2">20%</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 000.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="btn btn__icon-white border-purple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">2</div>
+                                                        <div class="col" style="width: 20%; max-width: 20%; flex-basis: 20%;">
+                                                            <div class="box__input"><input type="text" placeholder="Наименование" data-autocomplete></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ед. изм.</option>
+                                                                    <option value="1-2">Ед. изм.-1</option>
+                                                                    <option value="1-2">Ед. изм.-2</option>
+                                                                    <option value="1-2">Ед. изм.-3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Количество" value="6"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Цена" value="1 400.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 800.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ставка НДС</option>
+                                                                    <option value="1-2">10%</option>
+                                                                    <option value="1-2">20%</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 000.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="btn btn__icon-white border-purple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">1</div>
+                                                        <div class="col" style="width: 20%; max-width: 20%; flex-basis: 20%;">
+                                                            <div class="box__input"><input type="text" placeholder="Наименование" data-autocomplete></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ед. изм.</option>
+                                                                    <option value="1-2">Ед. изм.-1</option>
+                                                                    <option value="1-2">Ед. изм.-2</option>
+                                                                    <option value="1-2">Ед. изм.-3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Количество" value="6"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Цена" value="1 400.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 800.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ставка НДС</option>
+                                                                    <option value="1-2">10%</option>
+                                                                    <option value="1-2">20%</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 000.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="btn btn__icon-white border-purple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">2</div>
+                                                        <div class="col" style="width: 20%; max-width: 20%; flex-basis: 20%;">
+                                                            <div class="box__input"><input type="text" placeholder="Наименование" data-autocomplete></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ед. изм.</option>
+                                                                    <option value="1-2">Ед. изм.-1</option>
+                                                                    <option value="1-2">Ед. изм.-2</option>
+                                                                    <option value="1-2">Ед. изм.-3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Количество" value="6"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Цена" value="1 400.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 800.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ставка НДС</option>
+                                                                    <option value="1-2">10%</option>
+                                                                    <option value="1-2">20%</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 000.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="btn btn__icon-white border-purple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">1</div>
+                                                        <div class="col" style="width: 20%; max-width: 20%; flex-basis: 20%;">
+                                                            <div class="box__input"><input type="text" placeholder="Наименование" data-autocomplete></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ед. изм.</option>
+                                                                    <option value="1-2">Ед. изм.-1</option>
+                                                                    <option value="1-2">Ед. изм.-2</option>
+                                                                    <option value="1-2">Ед. изм.-3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Количество" value="6"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Цена" value="1 400.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 800.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ставка НДС</option>
+                                                                    <option value="1-2">10%</option>
+                                                                    <option value="1-2">20%</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 000.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="btn btn__icon-white border-purple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">2</div>
+                                                        <div class="col" style="width: 20%; max-width: 20%; flex-basis: 20%;">
+                                                            <div class="box__input"><input type="text" placeholder="Наименование" data-autocomplete></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ед. изм.</option>
+                                                                    <option value="1-2">Ед. изм.-1</option>
+                                                                    <option value="1-2">Ед. изм.-2</option>
+                                                                    <option value="1-2">Ед. изм.-3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Количество" value="6"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Цена" value="1 400.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 800.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ставка НДС</option>
+                                                                    <option value="1-2">10%</option>
+                                                                    <option value="1-2">20%</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 000.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="btn btn__icon-white border-purple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">1</div>
+                                                        <div class="col" style="width: 20%; max-width: 20%; flex-basis: 20%;">
+                                                            <div class="box__input"><input type="text" placeholder="Наименование" data-autocomplete></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ед. изм.</option>
+                                                                    <option value="1-2">Ед. изм.-1</option>
+                                                                    <option value="1-2">Ед. изм.-2</option>
+                                                                    <option value="1-2">Ед. изм.-3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Количество" value="6"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Цена" value="1 400.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 800.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ставка НДС</option>
+                                                                    <option value="1-2">10%</option>
+                                                                    <option value="1-2">20%</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 000.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="btn btn__icon-white border-purple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">2</div>
+                                                        <div class="col" style="width: 20%; max-width: 20%; flex-basis: 20%;">
+                                                            <div class="box__input"><input type="text" placeholder="Наименование" data-autocomplete></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ед. изм.</option>
+                                                                    <option value="1-2">Ед. изм.-1</option>
+                                                                    <option value="1-2">Ед. изм.-2</option>
+                                                                    <option value="1-2">Ед. изм.-3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Количество" value="6"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Цена" value="1 400.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 800.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ставка НДС</option>
+                                                                    <option value="1-2">10%</option>
+                                                                    <option value="1-2">20%</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 000.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="btn btn__icon-white border-purple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">1</div>
+                                                        <div class="col" style="width: 20%; max-width: 20%; flex-basis: 20%;">
+                                                            <div class="box__input"><input type="text" placeholder="Наименование" data-autocomplete></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ед. изм.</option>
+                                                                    <option value="1-2">Ед. изм.-1</option>
+                                                                    <option value="1-2">Ед. изм.-2</option>
+                                                                    <option value="1-2">Ед. изм.-3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Количество" value="6"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Цена" value="1 400.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 800.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ставка НДС</option>
+                                                                    <option value="1-2">10%</option>
+                                                                    <option value="1-2">20%</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 000.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="btn btn__icon-white border-purple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">2</div>
+                                                        <div class="col" style="width: 20%; max-width: 20%; flex-basis: 20%;">
+                                                            <div class="box__input"><input type="text" placeholder="Наименование" data-autocomplete></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ед. изм.</option>
+                                                                    <option value="1-2">Ед. изм.-1</option>
+                                                                    <option value="1-2">Ед. изм.-2</option>
+                                                                    <option value="1-2">Ед. изм.-3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Количество" value="6"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Цена" value="1 400.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 800.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ставка НДС</option>
+                                                                    <option value="1-2">10%</option>
+                                                                    <option value="1-2">20%</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 000.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="btn btn__icon-white border-purple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">1</div>
+                                                        <div class="col" style="width: 20%; max-width: 20%; flex-basis: 20%;">
+                                                            <div class="box__input"><input type="text" placeholder="Наименование" data-autocomplete></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ед. изм.</option>
+                                                                    <option value="1-2">Ед. изм.-1</option>
+                                                                    <option value="1-2">Ед. изм.-2</option>
+                                                                    <option value="1-2">Ед. изм.-3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Количество" value="6"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Цена" value="1 400.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 800.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ставка НДС</option>
+                                                                    <option value="1-2">10%</option>
+                                                                    <option value="1-2">20%</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 000.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="btn btn__icon-white border-purple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">2</div>
+                                                        <div class="col" style="width: 20%; max-width: 20%; flex-basis: 20%;">
+                                                            <div class="box__input"><input type="text" placeholder="Наименование" data-autocomplete></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ед. изм.</option>
+                                                                    <option value="1-2">Ед. изм.-1</option>
+                                                                    <option value="1-2">Ед. изм.-2</option>
+                                                                    <option value="1-2">Ед. изм.-3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Количество" value="6"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Цена" value="1 400.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 800.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ставка НДС</option>
+                                                                    <option value="1-2">10%</option>
+                                                                    <option value="1-2">20%</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 000.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="btn btn__icon-white border-purple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">1</div>
+                                                        <div class="col" style="width: 20%; max-width: 20%; flex-basis: 20%;">
+                                                            <div class="box__input"><input type="text" placeholder="Наименование" data-autocomplete></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ед. изм.</option>
+                                                                    <option value="1-2">Ед. изм.-1</option>
+                                                                    <option value="1-2">Ед. изм.-2</option>
+                                                                    <option value="1-2">Ед. изм.-3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Количество" value="6"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Цена" value="1 400.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 800.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ставка НДС</option>
+                                                                    <option value="1-2">10%</option>
+                                                                    <option value="1-2">20%</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 000.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="btn btn__icon-white border-purple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">2</div>
+                                                        <div class="col" style="width: 20%; max-width: 20%; flex-basis: 20%;">
+                                                            <div class="box__input"><input type="text" placeholder="Наименование" data-autocomplete></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ед. изм.</option>
+                                                                    <option value="1-2">Ед. изм.-1</option>
+                                                                    <option value="1-2">Ед. изм.-2</option>
+                                                                    <option value="1-2">Ед. изм.-3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Количество" value="6"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Цена" value="1 400.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 800.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ставка НДС</option>
+                                                                    <option value="1-2">10%</option>
+                                                                    <option value="1-2">20%</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 000.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="btn btn__icon-white border-purple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">1</div>
+                                                        <div class="col" style="width: 20%; max-width: 20%; flex-basis: 20%;">
+                                                            <div class="box__input"><input type="text" placeholder="Наименование" data-autocomplete></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ед. изм.</option>
+                                                                    <option value="1-2">Ед. изм.-1</option>
+                                                                    <option value="1-2">Ед. изм.-2</option>
+                                                                    <option value="1-2">Ед. изм.-3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Количество" value="6"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Цена" value="1 400.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 800.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ставка НДС</option>
+                                                                    <option value="1-2">10%</option>
+                                                                    <option value="1-2">20%</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 000.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="btn btn__icon-white border-purple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">2</div>
+                                                        <div class="col" style="width: 20%; max-width: 20%; flex-basis: 20%;">
+                                                            <div class="box__input"><input type="text" placeholder="Наименование" data-autocomplete></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ед. изм.</option>
+                                                                    <option value="1-2">Ед. изм.-1</option>
+                                                                    <option value="1-2">Ед. изм.-2</option>
+                                                                    <option value="1-2">Ед. изм.-3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 5%; max-width: 5%; flex-basis: 5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Количество" value="6"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Цена" value="1 400.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 800.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ставка НДС</option>
+                                                                    <option value="1-2">10%</option>
+                                                                    <option value="1-2">20%</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 12.5%; max-width: 12.5%; flex-basis: 12.5%;">
+                                                            <div class="box__input"><input type="text" placeholder="Сумма" value="2 000.00"></div>
+                                                        </div>
+                                                        <div class="col" style="width: 10%; max-width: 10%; flex-basis: 10%;">
+                                                            <div class="btn btn__icon-white border-purple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item -total" data-table>
+                                                    <div class="row">
+                                                        <div class="col" style="width: 52.5%; max-width: 52.5%; flex-basis: 52.5%;">Итого:</div>
+                                                        <div class="col" style="width: 25%; max-width: 25%; flex-basis: 25%; padding: 0 0 0 10px;">1 400.00</div>
+                                                        <div class="col" style="width: 22.5%; max-width: 22.5%; flex-basis: 22.5%; padding: 0 0 0 10px;">1 400.00</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+					            </div>
+					        </div> 
+					    </div>
+					</section>
+                    
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>

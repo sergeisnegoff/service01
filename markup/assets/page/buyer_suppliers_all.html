@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>Покупатель/Поставщики/Все</title>
+
+    ${require('../components/head/head.html')}
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+       
+        ${require('../components/header-buyer/header.html')}
+        
+        <div class="box__app__content">
+           
+            <div class="box__app__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="box__breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Покупатель</a></li>
+                                    <li><a href="#">Поставщики</a></li>
+                                    <li>Все</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            ${require('../components/profile/profile.html')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+				
+					<section class="box__suppliers__page">
+					    <div class="container">
+					        <div class="row">
+					            <div class="col-6">
+					                <h1>Поставщики</h1>
+					            </div>
+					            <div class="col-3">
+					                <div class="box__select">
+                                        <select>
+                                            <option value="1-1">Товарная группа</option>
+                                            <option value="1-2">Товарная группа - 1</option>
+                                            <option value="1-2">Товарная группа - 2</option>
+                                            <option value="1-2">Товарная группа - 3</option>
+                                        </select>
+                                    </div>
+					            </div>
+					            <div class="col-3">
+					                <div class="box__search">
+					                    <form>
+					                        <div class="box__input"><input type="text" placeholder="Найти поставщика"></div>
+					                        <div class="btn__search"><button></button></div>
+					                    </form>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__tabs">
+                                        <ul>
+                                            <li class="active"><a href="#">Все</a></li>
+                                            <li><a href="#">Мои поставщики</a></li>
+                                            <li><a href="#">Избранные поставщики</a></li>
+                                        </ul>
+                                    </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__content__table">
+                                        <div class="table__content-title">
+                                            <div class="row">
+                                                <div class="col-4"><h3>Название</h3></div>
+                                                <div class="col-4"><h3>Комментарий</h3></div>
+                                                <div class="col-2"><h3>Избранные</h3></div>
+                                                <div class="col-2"><h3>Начать работу<br/> с производителем</h3></div>
+                                            </div>
+                                        </div>
+                                        <div class="table__content">
+                                            <div class="box__table__item">
+                                                <div class="box__item">
+                                                    <div class="row">
+                                                        <div class="col-4">Ребрышко и пиво</div>
+                                                        <div class="col-4">Надежный партнер</div>
+                                                        <div class="col-2">
+                                                            <div class="btn__icon">
+                                                                <label>
+                                                                    <input class="visually-hidden" type="checkbox" checked>
+                                                                    <div class="box__svg"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.8401 4.61C20.3294 4.09901 19.7229 3.69365 19.0555 3.41709C18.388 3.14052 17.6726 2.99818 16.9501 2.99818C16.2276 2.99818 15.5122 3.14052 14.8448 3.41709C14.1773 3.69365 13.5709 4.09901 13.0601 4.61L12.0001 5.67L10.9401 4.61C9.90843 3.57831 8.50915 2.99871 7.05012 2.99871C5.59109 2.99871 4.19181 3.57831 3.16012 4.61C2.12843 5.64169 1.54883 7.04097 1.54883 8.5C1.54883 9.95903 2.12843 11.3583 3.16012 12.39L4.22012 13.45L12.0001 21.23L19.7801 13.45L20.8401 12.39C21.3511 11.8792 21.7565 11.2728 22.033 10.6054C22.3096 9.9379 22.4519 9.22249 22.4519 8.5C22.4519 7.77751 22.3096 7.06211 22.033 6.39465C21.7565 5.72719 21.3511 5.12076 20.8401 4.61V4.61Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <div class="btn"><button>Начать работу</button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item">
+                                                    <div class="row">
+                                                        <div class="col-4">Ребрышко и пиво</div>
+                                                        <div class="col-4">Надежный партнер</div>
+                                                        <div class="col-2">
+                                                            <div class="btn__icon">
+                                                                <label>
+                                                                    <input class="visually-hidden" type="checkbox">
+                                                                    <div class="box__svg"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.8401 4.61C20.3294 4.09901 19.7229 3.69365 19.0555 3.41709C18.388 3.14052 17.6726 2.99818 16.9501 2.99818C16.2276 2.99818 15.5122 3.14052 14.8448 3.41709C14.1773 3.69365 13.5709 4.09901 13.0601 4.61L12.0001 5.67L10.9401 4.61C9.90843 3.57831 8.50915 2.99871 7.05012 2.99871C5.59109 2.99871 4.19181 3.57831 3.16012 4.61C2.12843 5.64169 1.54883 7.04097 1.54883 8.5C1.54883 9.95903 2.12843 11.3583 3.16012 12.39L4.22012 13.45L12.0001 21.23L19.7801 13.45L20.8401 12.39C21.3511 11.8792 21.7565 11.2728 22.033 10.6054C22.3096 9.9379 22.4519 9.22249 22.4519 8.5C22.4519 7.77751 22.3096 7.06211 22.033 6.39465C21.7565 5.72719 21.3511 5.12076 20.8401 4.61V4.61Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <div class="btn"><button>Начать работу</button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item">
+                                                    <div class="row">
+                                                        <div class="col-4">Ребрышко и пиво</div>
+                                                        <div class="col-4">Надежный партнер</div>
+                                                        <div class="col-2">
+                                                            <div class="btn__icon">
+                                                                <label>
+                                                                    <input class="visually-hidden" type="checkbox" checked>
+                                                                    <div class="box__svg"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.8401 4.61C20.3294 4.09901 19.7229 3.69365 19.0555 3.41709C18.388 3.14052 17.6726 2.99818 16.9501 2.99818C16.2276 2.99818 15.5122 3.14052 14.8448 3.41709C14.1773 3.69365 13.5709 4.09901 13.0601 4.61L12.0001 5.67L10.9401 4.61C9.90843 3.57831 8.50915 2.99871 7.05012 2.99871C5.59109 2.99871 4.19181 3.57831 3.16012 4.61C2.12843 5.64169 1.54883 7.04097 1.54883 8.5C1.54883 9.95903 2.12843 11.3583 3.16012 12.39L4.22012 13.45L12.0001 21.23L19.7801 13.45L20.8401 12.39C21.3511 11.8792 21.7565 11.2728 22.033 10.6054C22.3096 9.9379 22.4519 9.22249 22.4519 8.5C22.4519 7.77751 22.3096 7.06211 22.033 6.39465C21.7565 5.72719 21.3511 5.12076 20.8401 4.61V4.61Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <div class="btn"><button>Начать работу</button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item">
+                                                    <div class="row">
+                                                        <div class="col-4">Ребрышко и пиво</div>
+                                                        <div class="col-4">Надежный партнер</div>
+                                                        <div class="col-2">
+                                                            <div class="btn__icon">
+                                                                <label>
+                                                                    <input class="visually-hidden" type="checkbox">
+                                                                    <div class="box__svg"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.8401 4.61C20.3294 4.09901 19.7229 3.69365 19.0555 3.41709C18.388 3.14052 17.6726 2.99818 16.9501 2.99818C16.2276 2.99818 15.5122 3.14052 14.8448 3.41709C14.1773 3.69365 13.5709 4.09901 13.0601 4.61L12.0001 5.67L10.9401 4.61C9.90843 3.57831 8.50915 2.99871 7.05012 2.99871C5.59109 2.99871 4.19181 3.57831 3.16012 4.61C2.12843 5.64169 1.54883 7.04097 1.54883 8.5C1.54883 9.95903 2.12843 11.3583 3.16012 12.39L4.22012 13.45L12.0001 21.23L19.7801 13.45L20.8401 12.39C21.3511 11.8792 21.7565 11.2728 22.033 10.6054C22.3096 9.9379 22.4519 9.22249 22.4519 8.5C22.4519 7.77751 22.3096 7.06211 22.033 6.39465C21.7565 5.72719 21.3511 5.12076 20.8401 4.61V4.61Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <div class="btn"><button>Начать работу</button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table__content-bottom">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="box__pagination">
+                                                        <ul>
+                                                            <li class="prev"><a href="#"><span></span></a></li>
+                                                            <li><a href="#">1</a></li>
+                                                            <li><a href="#">2</a></li>
+                                                            <li class="active"><a href="#">3</a></li>
+                                                            <li><a href="#">4</a></li>
+                                                            <li><a href="#">...</a></li>
+                                                            <li><a href="#">7</a></li>
+                                                            <li class="next"><a href="#"><span></span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+					            </div>
+					        </div>
+					    </div>
+					</section>
+
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>Покупатель/Накладные</title>
+
+    ${require('../components/head/head.html')}
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+       
+        ${require('../components/header-buyer/header.html')}
+        
+        <div class="box__app__content">
+           
+            <div class="box__app__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="box__breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Покупатель</a></li>
+                                    <li>Накладные</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            ${require('../components/profile/profile.html')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+                    
+                    <section class="box__buyers__page invoice-page">
+					    <div class="container">
+					        <div class="row">
+					            <div class="col-4">
+					                <h1>Накладные</h1>
+					            </div>
+					            <div class="col-8">
+					                <div class="wraapper__button-nowrap content__justify-end">
+					                    <div class="btn btn__icons"><button><span style="background-image: url(${require('../img/icon/table-dollar.svg')});"></span>Напечатать ценники</button></div>
+					                    <div class="btn btn__icons"><button><span style="background-image: url(${require('../img/icon/table-columns.svg')});"></span>Колонки</button></div>
+					                    <div class="btn btn__icons"><button><span style="background-image: url(${require('../img/icon/table-filter.svg')});"></span>Фильтрация</button></div>
+					                    <div class="btn"><button>Получить накладные из ЭДО</button></div>
+					                </div>
+					            </div>
+					        </div>
+					        <br>
+					        <div class="row">
+					            <div class="col-12">
+					                Нечего не найдено
+					            </div>
+					        </div>
+					    </div>
+					</section>    
+                    
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>

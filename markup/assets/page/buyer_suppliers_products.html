@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Покупатель/Поставщики/Товары</title>
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="" />
+    <meta name="author" content="" />
+    <meta name="designer" content="" />
+    <link rel="alternate" href="" hreflang="en" />
+    <link rel="alternate" href="" hreflang="fr" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="title" />
+    <meta property="og:site_name" content="site_name" />
+    <meta property="og:description" content="description" />
+    <meta property="og:url" content="url" />
+    <meta property="og:image" content="image" />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Plus -->
+    <meta itemprop="name" content="name" />
+    <meta itemprop="description" content="description" />
+    <meta itemprop="image" content="image" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="card" />
+    <meta name="twitter:title" content="title" />
+    <meta name="twitter:description" content="description" />
+    <meta name="twitter:site" content="@site" />
+    <meta name="twitter:creator" content="@creator" />
+    <meta name="twitter:url" content="url" />
+    <meta name="twitter:image" content="image" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="${require('../img/favicon/apple-icon-57x57.png')}">
+    <link rel="apple-touch-icon" sizes="60x60" href="${require('../img/favicon/apple-icon-60x60.png')}">
+    <link rel="apple-touch-icon" sizes="72x72" href="${require('../img/favicon/apple-icon-72x72.png')}">
+    <link rel="apple-touch-icon" sizes="76x76" href="${require('../img/favicon/apple-icon-76x76.png')}">
+    <link rel="apple-touch-icon" sizes="114x114" href="${require('../img/favicon/apple-icon-114x114.png')}">
+    <link rel="apple-touch-icon" sizes="120x120" href="${require('../img/favicon/apple-icon-120x120.png')}">
+    <link rel="apple-touch-icon" sizes="144x144" href="${require('../img/favicon/apple-icon-144x144.png')}">
+    <link rel="apple-touch-icon" sizes="152x152" href="${require('../img/favicon/apple-icon-152x152.png')}">
+    <link rel="apple-touch-icon" sizes="180x180" href="${require('../img/favicon/apple-icon-180x180.png')}">
+
+    <link rel="icon" type="image/png" href="${require('../img/favicon/favicon-16x16.png')}" sizes="16x16">
+    <link rel="icon" type="image/png" href="${require('../img/favicon/favicon-32x32.png')}" sizes="32x32">
+    <link rel="icon" type="image/png" href="${require('../img/favicon/favicon-96x96.png')}" sizes="96x96">
+    <link rel="icon" type="image/png" href="${require('../img/favicon/android-icon-192x192.png')}" sizes="192x192">
+   
+    <link rel="manifest" href="${require('../img/favicon/manifest.json')}">
+    <link rel="shortcut icon" href="${require('../img/favicon/favicon.ico')}">
+    <meta name="msapplication-TileColor" content="#3D2797">
+    <meta name="msapplication-TileImage" content="${require('../img/favicon/ms-icon-144x144.png')}">
+    <meta name="theme-color" content="#3D2797">
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+       
+        ${require('../components/header-buyer/header.html')}
+        
+        <div class="box__app__content">
+           
+            <div class="box__app__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="box__breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Поставщики</a></li>
+                                    <li>Товары</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            ${require('../components/profile/profile.html')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+				
+					<section class="box__suppliers__page">
+					    <div class="container">
+					        <div class="row">
+					            <div class="col-6">
+					                <h1>Вкусторг</h1>
+					            </div>
+					            <div class="col-6">
+					                <div class="wraapper__button-nowrap content__justify-end">
+					                    <div class="btn btn__icons"><button><span style="background-image: url(${require('../img/icon/table-export.svg')});"></span>Экспорт товаров</button></div>
+					                    <div class="btn btn__icon-favorite btn-right"><button><span style="background-image: url(${require('../img/icon/to-favorites.svg')})"></span>В избранное</button></div>
+					                    <div class="btn"><button>Начать работу</button></div>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__tabs">
+                                        <ul>
+                                            <li><a href="#">О компании</a></li>
+                                            <li class="active"><a href="#">Товары</a></li>
+                                        </ul>
+                                    </div>
+					            </div>
+					        </div>
+                            <div class="row content-aboutcompany">
+					            <div class="col-3">
+					                <div class="aside__category">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h4>Каталог</h4>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="aside__category-catalog">
+                                                    <ul>
+                                                        <li class="aside__category-toggle">
+                                                            <a href="#">Категория 1</a>
+                                                            <span></span>
+                                                            <ul>
+                                                                <li><a href="#">Подкатегория 1</a></li>
+                                                                <li class="aside__category-edit">
+                                                                    <div class="box__input">
+                                                                        <input type="text" value="Подкатегория 1">
+                                                                        <div class="btn btn__icon-purple"><button><span style="background-image: url(${require('../img/icon/table-accept.svg')})"></span></button></div>
+                                                                    </div>
+                                                                </li>
+                                                                <li><a href="#">Подкатегория 2</a></li>
+                                                                <li><a href="#">Подкатегория 3</a></li>
+                                                                <li><a href="#">Подкатегория 4</a></li>
+                                                                <li><a href="#">Подкатегория 6</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><a href="#">Категория 2</a><span></span></li>
+                                                        <li><a href="#">Категория 3</a><span></span></li>
+                                                        <li><a href="#">Категория 4</a><span></span></li>
+                                                        <li><a href="#">Категория 5</a><span></span></li>
+                                                        <li><a href="#">Категория 6</a><span></span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+					                </div>
+					            </div>
+					            <div class="col-9">
+					                <div class="box__content__table">
+                                       <div class="table__content-title">
+                                            <div class="row">
+                                                <div class="col-4"><h3>Номенклатура</h3></div>
+                                                <div class="col-1"><h3>Ед. изм</h3></div>
+                                                <div class="col-3"><h3>Артикул</h3></div>
+                                                <div class="col-3"><h3>Шрихкод</h3></div>
+                                                <div class="col-1"><h3>Действие</h3></div>
+                                            </div>
+                                        </div>
+                                        <div class="table__content">
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col-4">Сыр полутвердый Ламбер 50%</div>
+                                                        <div class="col-1">Кг</div>
+                                                        <div class="col-3">cPRzm8ip</div>
+                                                        <div class="col-3">A-0030-Z</div>
+                                                        <div class="col-1">
+                                                            <div class="wraapper__button-nowrap">
+                                                                <div class="btn btn__icon-purple"><button><span style="background-image: url(${require('../img/icon/btn-edit.svg')})"></span></button></div>
+                                                                <div class="btn-whitepurple btn__icon-whitepurple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col-4">Сыр полутвердый Ламбер 50%</div>
+                                                        <div class="col-1">Кг</div>
+                                                        <div class="col-3">cPRzm8ip</div>
+                                                        <div class="col-3">A-0030-Z</div>
+                                                        <div class="col-1">
+                                                            <div class="wraapper__button-nowrap">
+                                                                <div class="btn btn__icon-purple"><button><span style="background-image: url(${require('../img/icon/btn-edit.svg')})"></span></button></div>
+                                                                <div class="btn-whitepurple btn__icon-whitepurple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col-4">Сыр полутвердый Ламбер 50%</div>
+                                                        <div class="col-1">Кг</div>
+                                                        <div class="col-3">cPRzm8ip</div>
+                                                        <div class="col-3">A-0030-Z</div>
+                                                        <div class="col-1">
+                                                            <div class="wraapper__button-nowrap">
+                                                                <div class="btn btn__icon-purple"><button><span style="background-image: url(${require('../img/icon/btn-edit.svg')})"></span></button></div>
+                                                                <div class="btn-whitepurple btn__icon-whitepurple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col-4">Сыр полутвердый Ламбер 50%</div>
+                                                        <div class="col-1">Кг</div>
+                                                        <div class="col-3">cPRzm8ip</div>
+                                                        <div class="col-3">A-0030-Z</div>
+                                                        <div class="col-1">
+                                                            <div class="wraapper__button-nowrap">
+                                                                <div class="btn btn__icon-purple"><button><span style="background-image: url(${require('../img/icon/btn-edit.svg')})"></span></button></div>
+                                                                <div class="btn-whitepurple btn__icon-whitepurple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col-4">Сыр полутвердый Ламбер 50%</div>
+                                                        <div class="col-1">Кг</div>
+                                                        <div class="col-3">cPRzm8ip</div>
+                                                        <div class="col-3">A-0030-Z</div>
+                                                        <div class="col-1">
+                                                            <div class="wraapper__button-nowrap">
+                                                                <div class="btn btn__icon-purple"><button><span style="background-image: url(${require('../img/icon/btn-edit.svg')})"></span></button></div>
+                                                                <div class="btn-whitepurple btn__icon-whitepurple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table__content-bottom">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="box__pagination">
+                                                        <ul>
+                                                            <li class="prev"><a href="#"><span></span></a></li>
+                                                            <li><a href="#">1</a></li>
+                                                            <li><a href="#">2</a></li>
+                                                            <li class="active"><a href="#">3</a></li>
+                                                            <li><a href="#">4</a></li>
+                                                            <li><a href="#">...</a></li>
+                                                            <li><a href="#">7</a></li>
+                                                            <li class="next"><a href="#"><span></span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+					            </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>

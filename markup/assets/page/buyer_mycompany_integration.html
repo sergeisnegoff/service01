@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>Покупатель/Моя компания/Интеграция</title>
+
+    ${require('../components/head/head.html')}
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+       
+        ${require('../components/header-buyer/header.html')}
+        
+        <div class="box__app__content">
+           
+            <div class="box__app__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="box__breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Покупатель</a></li>
+                                    <li><a href="#">Моя компания</a></li>
+                                    <li>Интеграция</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            ${require('../components/profile/profile.html')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+                    
+                    <section class="box__companyuser__page">
+					    <div class="container">
+					        <div class="row">
+					            <div class="col-9">
+					                <h1>Моя компания</h1>
+					            </div>
+					            <div class="col-3">
+					                <div class="btn text-right"><button>Сохранить</button></div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__tabs">
+                                        <ul>
+                                            <li><a href="#">Общие</a></li>
+                                            <li><a href="#">Пользователи</a></li>
+                                            <li><a href="#">Организации и Торговые точки</a></li>
+                                            <li class="active"><a href="#">Интеграции</a></li>
+                                            <li><a href="#">Меркурий</a></li>
+                                        </ul>
+                                    </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__form box__form-company">
+					                    <form>
+                                            <div class="row">
+					                            <div class="col-5">
+					                                <h4>StoreHouse</h4>
+                                                </div>
+                                            </div>
+					                        <div class="row">
+					                            <div class="col-5">
+					                                <div class="box__input">
+					                                    <input type="text" placeholder="Хост">
+					                                </div>	
+					                                <div class="box__input">
+					                                    <input type="text" placeholder="Название компании">
+					                                </div>
+					                                <div class="box__input">
+					                                    <input type="text" placeholder="Порт">
+					                                </div>
+					                                <div class="box__input">
+					                                    <input type="text" placeholder="Логин">
+					                                </div>
+					                                <div class="box__input">
+					                                    <input type="text" placeholder="Пароль">
+					                                </div>
+					                                <br/>
+					                                <div class="btn"><button>Проверить соединение</button></div>
+					                            </div>
+					                        </div>
+					                    </form>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+					</section>
+                    
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>

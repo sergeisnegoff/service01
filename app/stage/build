@@ -1,0 +1,42 @@
+#!/bin/sh
+set -e
+IFS=$'\n'
+
+echo "Build stage"
+echo " "
+
+env -i UID=$UID $(printenv | grep '^CI_') bash -c '
+  set -a;
+  source .env.dist;
+
+  export COMPOSE_FILE=docker-compose.yaml:docker-compose.stage.yaml
+  export COMPOSE_PROJECT_NAME=$COMPOSE_PROJECT_NAME-$CI_COMMIT_BRANCH
+  export DOCKER_USER="$UID:$UID"
+
+  export APP_ENV=prod
+  export APP_DEBUG=0
+  export APP_SECRET=$(cat /dev/urandom | tr -dc "a-zA-Z0-9" | fold -w 32 | head -n 1)
+
+  unset UID
+
+  (printenv | grep -v "^_=" | sort)
+' > .env
+
+cat .env
+
+echo " "
+
+mkdir -p ./backend/var/nuxt
+mkdir -p /var/www/storage/.composer/cache
+mkdir -p /var/www/storage/$CI_PROJECT_NAME/public/uploads
+mkdir -p /var/www/storage/$CI_PROJECT_NAME/public/cache
+
+docker-compose build frontend backend
+docker-compose run --rm --no-deps -T frontend bash -c "npm install --no-save && npm run build"
+docker-compose run --rm -T backend composer install
+docker-compose up -d --build --remove-orphans --force-recreate
+
+echo " "
+echo "App url: https://$CI_ENVIRONMENT_DOMAIN"
+echo "Markup url: https://markup-$CI_ENVIRONMENT_DOMAIN"
+echo "Mail url: https://mail-$CI_ENVIRONMENT_DOMAIN"

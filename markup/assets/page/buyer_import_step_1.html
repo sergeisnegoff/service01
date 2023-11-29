@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>Покупатель/Импорт из номенклатуры. Шаг 1</title>
+
+    ${require('../components/head/head.html')}
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+       
+        ${require('../components/header-buyer/header.html')}
+        
+        <div class="box__app__content">
+           
+            <div class="box__app__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="box__breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Покупатель</a></li>
+                                    <li>Импорт из номенклатуры. Шаг 1</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            ${require('../components/profile/profile.html')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+                    
+                    <section class="box__buyers__page">
+					    <div class="container">
+					        <div class="row">
+					            <div class="col-5">
+					                <h1>Импорт товаров</h1>
+					            </div>
+					            <div class="col-7">
+					                <div class="wraapper__button-nowrap content__justify-end">
+					                    <div class="btn btn__icons"><button><span style="background-image: url(${require('../img/icon/table-arrow-right.svg')});"></span>Следующий шаг</button></div>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__tabs">
+                                        <ul>
+                                            <li class="active">1. Выбор файла</li>
+                                            <li><a href="#">2. Сопоставление</a></li>
+                                            <li><a href="#">3. Импорт товаров</a></li>
+                                        </ul>
+                                    </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-3">
+                                    <br>
+					                <h4>Файл для импорта</h4>
+					                <div class="btn btn__icons margin-15"><button><span style="background-image: url(${require('../img/icon/table-file.svg')});"></span>Выбрать файл</button></div>
+					            </div>
+					        </div>
+					        <br>
+					        <div class="row">
+					            <div class="col-3">
+					                <h4>Ипортировать данные для</h4>
+					                <div class="box__select">
+                                        <select>
+                                            <option value="1-1" selected="selected">Выбрать категорию</option>
+                                            <option value="1-2">Категория 1.1</option>
+                                            <option value="1-3">Категория 1.2</option>
+                                            <option value="2-1">Категория 1.3</option>
+                                            <option value="2-2">Категория 1.4</option>
+                                        </select>
+                                    </div>
+					            </div>
+					        </div>
+					    </div>
+					</section>
+                    
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>

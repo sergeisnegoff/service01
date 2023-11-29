@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>Профиль</title>
+
+    ${require('../components/head/head.html')}
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+       
+        ${require('../components/header-buyer/header.html')}
+        
+        <div class="box__app__content">
+           
+            <div class="box__app__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="box__breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Моя компания</a></li>
+                                    <li>Добавить пользователя</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            ${require('../components/profile/profile.html')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+                    
+                    <section class="box__buyers__page invoice-page">
+					    <div class="container">
+					        <div class="row">
+					            <div class="col-7">
+					                <h1>Добавить пользователя</h1>
+					            </div>
+					            <div class="col-5">
+					                <div class="wraapper__button-nowrap content__justify-end">
+					                    <div class="btn btn-green btn__icons"><button><span style="background-image: url(${require('../img/icon/table-accept.svg')});"></span>Сохранить</button></div>
+					                </div>
+					            </div>
+					        </div>
+					         <div class="row">
+					            <div class="col-12">
+					                <div class="box__tabs">
+                                        <ul>
+                                            <li class="active"><a href="#">Общие</a></li>
+                                            <li><a href="#">Права пользователя</a></li>
+                                        </ul>
+                                    </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-5">
+					                <div class="box__form">
+					                    <form action="">
+					                        <div class="row">
+                                                <div class="col-12">
+					                                <h4 class="mt-30">Основные</h4>
+					                            </div>
+					                            <div class="col-12 mt-15">
+					                                <div class="box__input"><input type="text" placeholder="ФИО"></div>
+					                            </div>
+					                            <div class="col-12">
+					                                <div class="box__input"><input type="text" placeholder="Email или телефон"></div>
+					                            </div>
+					                        </div>
+					                        <div class="row">
+                                                <div class="col-12">
+					                                <h4 class="mt-30">Оповещения о регистрации пользователя</h4>
+					                            </div>
+					                            <div class="col-12">
+                                                    <div class="box__checkbox">
+                                                        <div class="wrapper-checkbox">
+                                                            <label>
+                                                                <input type="checkbox">
+                                                                <span>
+                                                                    <span class="box__checkbox-icon"></span>
+                                                                    <span class="box__checkbox-text">Приглашение на телефон</span>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+					                            </div>
+					                            <div class="col-12">
+					                                <div class="box__checkbox">
+                                                        <div class="wrapper-checkbox">
+                                                            <label>
+                                                                <input type="checkbox" checked="">
+                                                                <span>
+                                                                    <span class="box__checkbox-icon"></span>
+                                                                    <span class="box__checkbox-text">Приглашения на почту</span>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+					                            </div>
+					                        </div>
+					                    </form>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+					</section>
+                    
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>

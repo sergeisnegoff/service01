@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>Создание накладной</title>
+
+    ${require('../components/head/head.html')}
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+       
+        ${require('../components/header-buyer/header.html')}
+        
+        <div class="box__app__content">
+           
+            <div class="box__app__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="box__breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Накладные</a></li>
+                                    <li>Добавить накладную</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            ${require('../components/profile/profile.html')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+                    
+                    <section class="box__companyuser__page">
+					    <div class="container">
+					        <div class="row">
+					            <div class="col-4">
+					                <h1>Создание накладной</h1>
+					            </div>
+					            <div class="col-8">
+					                <div class="wraapper__button-nowrap content__justify-end">
+                                        <div class="btn btn__icons"><button><span style="background-image: url(img/icon/table-add.svg);"></span>Добавить товар</button></div>
+                                        <div class="btn btn__icons btn-green"><button><span style="background-image: url(img/icon/table-accept.svg);"></span>Сохранить</button></div>
+                                        <div class="btn btn__icons"><button><span style="background-image: url(img/icon/table-accept.svg);"></span>Сохранить и закрыть</button></div>
+                                    </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__content__table table-invoice">
+                                       <div class="table__content-title box__table-sorting">
+                                            <div class="row">
+                                                <div class="col-1">
+                                                    <div class="box__checkbox">
+                                                        <div class="wrapper-checkbox">
+                                                            <label>
+                                                                <input type="checkbox">
+                                                                <span>
+                                                                    <span class="box__checkbox-icon"></span>
+                                                                    <span class="box__checkbox-text"></span>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-1">
+                                                    <h3>№</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <h3>Номенклатура поставщика</h3>
+                                                    <div class="btn__sorting btn__sorting-ascending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col-1">
+                                                    <h3>Кол.</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col-1">
+                                                    <h3>Ед.изм.</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col-1">
+                                                    <h3>Цена</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <h3>Сумма</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col-1">
+                                                    <h3>НДС</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                                <div class="col-1">
+                                                    <h3>Сумма НДС + цена</h3>
+                                                    <div class="btn__sorting btn__sorting-descending"><button><span></span></button></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table__content">
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col-1">
+                                                            <div class="box__checkbox">
+                                                                <div class="wrapper-checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox">
+                                                                        <span>
+                                                                            <span class="box__checkbox-icon"></span>
+                                                                            <span class="box__checkbox-text"></span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-1">1</div>
+                                                        <div class="col-3">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">По умолчанию</option>
+                                                                    <option value="1-2">Сыр полудтвердый</option>
+                                                                    <option value="1-3">Сыр полудтвердый</option>
+                                                                    <option value="2-1">Сыр полудтвердый</option>
+                                                                    <option value="2-2">Сыр полудтвердый</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-1">
+                                                            <div class="box__input"><input type="text" value="10"></div>
+                                                        </div>
+                                                        <div class="col-1">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ед. изм.</option>
+                                                                    <option value="1-2">Ед. изм - 6</option>
+                                                                    <option value="1-3">Ед. изм - 7</option>
+                                                                    <option value="2-1">Ед. изм - 8</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-1"><div class="box__input"><input type="text" value="51 310"></div></div>
+                                                        <div class="col-2">51 3100</div>
+                                                        <div class="col-1">200</div>
+                                                        <div class="col-1">1600</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col-1">
+                                                            <div class="box__checkbox">
+                                                                <div class="wrapper-checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox">
+                                                                        <span>
+                                                                            <span class="box__checkbox-icon"></span>
+                                                                            <span class="box__checkbox-text"></span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-1">2</div>
+                                                        <div class="col-3">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">По умолчанию</option>
+                                                                    <option value="1-2">Сыр полудтвердый</option>
+                                                                    <option value="1-3">Сыр полудтвердый</option>
+                                                                    <option value="2-1">Сыр полудтвердый</option>
+                                                                    <option value="2-2">Сыр полудтвердый</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-1">
+                                                            <div class="box__input"><input type="text" value="10"></div>
+                                                        </div>
+                                                        <div class="col-1">
+                                                            <div class="box__select">
+                                                                <select>
+                                                                    <option value="1-1" selected="selected">Ед. изм.</option>
+                                                                    <option value="1-2">Ед. изм - 6</option>
+                                                                    <option value="1-3">Ед. изм - 7</option>
+                                                                    <option value="2-1">Ед. изм - 8</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-1"><div class="box__input"><input type="text" value="51 310"></div></div>
+                                                        <div class="col-2">51 3100</div>
+                                                        <div class="col-1">200</div>
+                                                        <div class="col-1">1600</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col-1"></div>
+                                                        <div class="col-7">Итого:</div>
+                                                        <div class="col-2">51 3100</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table__content-bottom">
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <div class="box__select">
+                                                        <select>
+                                                            <option value="1-1" selected="selected">Покупатель</option>
+                                                            <option value="1-2">Покупатель-1</option>
+                                                            <option value="1-3">Покупатель-2</option>
+                                                            <option value="2-1">Покупатель-3</option>
+                                                            <option value="2-2">Покупатель-4</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+					            </div>
+					        </div>
+					    </div>
+					</section>
+                    
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>

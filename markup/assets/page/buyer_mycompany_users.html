@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    
+    <title>Покупатель/Моя компания/Пользователи</title>
+
+    ${require('../components/head/head.html')}
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+       
+        ${require('../components/header-buyer/header.html')}
+        
+        <div class="box__app__content">
+           
+            <div class="box__app__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="box__breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Покупатель</a></li>
+                                    <li><a href="#">Моя компания</a></li>
+                                    <li>Пользователи</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            ${require('../components/profile/profile.html')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+                   
+                    <section class="box__suppliers__page">
+					    <div class="container">
+					        <div class="row">
+					            <div class="col-9">
+					                <h1>Моя компания</h1>
+					            </div>
+					            <div class="col-3">
+					                <div class="btn text-right"><button>Сохранить</button></div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__tabs">
+                                        <ul>
+                                            <li><a href="#">Общие</a></li>
+                                            <li class="active"><a href="#">Пользователи</a></li>
+                                            <li><a href="#">Организации и Торговые точки</a></li>
+                                            <li><a href="#">Интеграции</a></li>
+                                            <li><a href="#">Меркурий</a></li>
+                                        </ul>
+                                    </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__content__table">
+                                        <div class="table__content-title">
+                                            <div class="row">
+                                                <div class="col-3"><h3>Имя</h3></div>
+                                                <div class="col-3"><h3>Комментарий</h3></div>
+                                                <div class="col-5"><h3>Активность</h3></div>
+                                                <div class="col-1"><h3>Действия</h3></div>
+                                            </div>
+                                        </div>
+                                        <div class="table__content">
+                                            <div class="box__table__item">
+                                                <div class="box__item">
+                                                    <div class="row">
+                                                        <div class="col-3">Валентин</div>
+                                                        <div class="col-3">Главный администратор</div>
+                                                        <div class="col-5">
+                                                            <div class="box__switch">
+                                                                <div class="wrapper-switch">
+                                                                    <label>
+                                                                        <input type="checkbox" name="checkbox-switch-1" checked>
+                                                                        <span>
+                                                                            <span class="box__radiobox-icon"></span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-1">
+                                                            <div class="wrapper__buttons content__justify-start">
+                                                                <div class="btn btn__icon-purple"><button><span style="background-image: url(${require('../img/icon/btn-edit.svg')})"></span></button></div>
+                                                                <div class="btn-whitepurple btn__icon-whitepurple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item">
+                                                    <div class="row">
+                                                        <div class="col-3">Валентин</div>
+                                                        <div class="col-3">Главный администратор</div>
+                                                        <div class="col-5">
+                                                            <div class="box__switch">
+                                                                <div class="wrapper-switch">
+                                                                    <label>
+                                                                        <input type="checkbox" name="checkbox-switch-1" checked>
+                                                                        <span>
+                                                                            <span class="box__radiobox-icon"></span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-1">
+                                                            <div class="wrapper__buttons content__justify-start">
+                                                                <div class="btn btn__icon-purple"><button><span style="background-image: url(${require('../img/icon/btn-edit.svg')})"></span></button></div>
+                                                                <div class="btn-whitepurple btn__icon-whitepurple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item">
+                                                    <div class="row">
+                                                        <div class="col-3">Валентин</div>
+                                                        <div class="col-3">Главный администратор</div>
+                                                        <div class="col-5">
+                                                            <div class="box__switch">
+                                                                <div class="wrapper-switch">
+                                                                    <label>
+                                                                        <input type="checkbox" name="checkbox-switch-1" checked>
+                                                                        <span>
+                                                                            <span class="box__radiobox-icon"></span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-1">
+                                                            <div class="wrapper__buttons content__justify-start">
+                                                                <div class="btn btn__icon-purple"><button><span style="background-image: url(${require('../img/icon/btn-edit.svg')})"></span></button></div>
+                                                                <div class="btn-whitepurple btn__icon-whitepurple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item">
+                                                    <div class="row">
+                                                        <div class="col-3">Валентин</div>
+                                                        <div class="col-3">Главный администратор</div>
+                                                        <div class="col-5">
+                                                            <div class="box__switch">
+                                                                <div class="wrapper-switch">
+                                                                    <label>
+                                                                        <input type="checkbox" name="checkbox-switch-1" checked>
+                                                                        <span>
+                                                                            <span class="box__radiobox-icon"></span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-1">
+                                                            <div class="wrapper__buttons content__justify-start">
+                                                                <div class="btn btn__icon-purple"><button><span style="background-image: url(${require('../img/icon/btn-edit.svg')})"></span></button></div>
+                                                                <div class="btn-whitepurple btn__icon-whitepurple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item">
+                                                    <div class="row">
+                                                        <div class="col-3">Валентин</div>
+                                                        <div class="col-3">Главный администратор</div>
+                                                        <div class="col-5">
+                                                            <div class="box__switch">
+                                                                <div class="wrapper-switch">
+                                                                    <label>
+                                                                        <input type="checkbox" name="checkbox-switch-1" checked>
+                                                                        <span>
+                                                                            <span class="box__radiobox-icon"></span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-1">
+                                                            <div class="wrapper__buttons content__justify-start">
+                                                                <div class="btn btn__icon-purple"><button><span style="background-image: url(${require('../img/icon/btn-edit.svg')})"></span></button></div>
+                                                                <div class="btn-whitepurple btn__icon-whitepurple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item">
+                                                    <div class="row">
+                                                        <div class="col-3">Валентин</div>
+                                                        <div class="col-3">Главный администратор</div>
+                                                        <div class="col-5">
+                                                            <div class="box__switch">
+                                                                <div class="wrapper-switch">
+                                                                    <label>
+                                                                        <input type="checkbox" name="checkbox-switch-1" checked>
+                                                                        <span>
+                                                                            <span class="box__radiobox-icon"></span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-1">
+                                                            <div class="wrapper__buttons content__justify-start">
+                                                                <div class="btn btn__icon-purple"><button><span style="background-image: url(${require('../img/icon/btn-edit.svg')})"></span></button></div>
+                                                                <div class="btn-whitepurple btn__icon-whitepurple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item">
+                                                    <div class="row">
+                                                        <div class="col-3">Валентин</div>
+                                                        <div class="col-3">Главный администратор</div>
+                                                        <div class="col-5">
+                                                            <div class="box__switch">
+                                                                <div class="wrapper-switch">
+                                                                    <label>
+                                                                        <input type="checkbox" name="checkbox-switch-1" checked>
+                                                                        <span>
+                                                                            <span class="box__radiobox-icon"></span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-1">
+                                                            <div class="wrapper__buttons content__justify-start">
+                                                                <div class="btn btn__icon-purple"><button><span style="background-image: url(${require('../img/icon/btn-edit.svg')})"></span></button></div>
+                                                                <div class="btn-whitepurple btn__icon-whitepurple"><button><span style="background-image: url(${require('../img/icon/btn-trash.svg')})"></span></button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table__content-bottom">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="box__pagination">
+                                                        <ul>
+                                                            <li class="prev"><a href="#"><span></span></a></li>
+                                                            <li><a href="#">1</a></li>
+                                                            <li><a href="#">2</a></li>
+                                                            <li class="active"><a href="#">3</a></li>
+                                                            <li><a href="#">4</a></li>
+                                                            <li><a href="#">...</a></li>
+                                                            <li><a href="#">7</a></li>
+                                                            <li class="next"><a href="#"><span></span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+					            </div>
+					        </div>
+					    </div>
+					</section>
+               
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>

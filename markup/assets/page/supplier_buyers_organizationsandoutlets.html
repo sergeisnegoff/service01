@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>Поставщик/Покупатели/Организации и торговые точки</title>
+
+    ${require('../components/head/head.html')}
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+       
+        ${require('../components/header-supplier/header.html')}
+        
+        <div class="box__app__content">
+           
+            <div class="box__app__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="box__breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Поставщик</a></li>
+                                    <li><a href="#">Покупатели</a></li>
+                                    <li>Организации и торговые точки</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            ${require('../components/profile/profile.html')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+				
+					<section class="box__buyers__page">
+					    <div class="container">
+					        <div class="row">
+					            <div class="col-12">
+					                <h1>Ребрышки и пиво</h1>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__tabs">
+                                        <ul>
+                                            <li><a href="#">О компании</a></li>
+                                            <li class="active"><a href="#">Организации и Торговые точки</a></li>
+                                        </ul>
+                                    </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+                                    <div class="box__content__table">
+                                        <div class="table__content">
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col-2">Органицация 1</div>
+                                                        <div class="col-3">ИНН: 386182824401</div>
+                                                        <div class="col-2">КПП: 774501175</div>
+                                                        <div class="col-3"></div>
+                                                        <div class="col-2"></div>
+                                                    </div>
+                                                    <div class="btn-toggle"><button><span></span></button></div>
+                                                </div>
+                                                <div class="box__item-content">
+                                                    <div class="box__content__children">
+                                                        <div class="box__children-title">
+                                                            <div class="row">
+                                                                <div class="col-2"><h4>Название</h4></div>
+                                                                <div class="col-3"><h4>Адрес</h4></div>
+                                                                <div class="col-2"><h4>Координаты</h4></div>
+                                                                <div class="col-3"><h4>Алтернативное название</h4></div>
+                                                                <div class="col-2"><h4>Идентификатор в ИБ</h4></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="box__children-content">
+                                                            <div class="row">
+                                                                <div class="col-2">Точка 1</div>
+                                                                <div class="col-3">г. Москва, ул. Донская, д. 8 стр. 1.</div>
+                                                                <div class="col-2">53.352434, 83.773057</div>
+                                                                <div class="col-3">Точка 1 недалеко от центра</div>
+                                                                <div class="col-2">774501175</div>
+                                                            </div>
+                                                            <div class="btn-edit"><button><span></span></button></div>
+                                                        </div>
+                                                        <div class="box__children-content">
+                                                            <div class="row">
+                                                                <div class="col-2">Точка 1</div>
+                                                                <div class="col-3">г. Москва, ул. Донская, д. 8 стр. 1.</div>
+                                                                <div class="col-2">53.352434, 83.773057</div>
+                                                                <div class="col-3">Точка 1 недалеко от центра</div>
+                                                                <div class="col-2">774501175</div>
+                                                            </div>
+                                                            <div class="btn-edit"><button><span></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item active" data-table>
+                                                    <div class="row">
+                                                        <div class="col-2">Органицация 1</div>
+                                                        <div class="col-3">ИНН: 386182824401</div>
+                                                        <div class="col-2">КПП: 774501175</div>
+                                                        <div class="col-3"></div>
+                                                        <div class="col-2"></div>
+                                                    </div>
+                                                    <div class="btn-toggle"><button><span></span></button></div>
+                                                </div>
+                                                <div class="box__item-content">
+                                                    <div class="box__content__children">
+                                                        <div class="box__children-title">
+                                                            <div class="row">
+                                                                <div class="col-2"><h4>Название</h4></div>
+                                                                <div class="col-3"><h4>Адрес</h4></div>
+                                                                <div class="col-2"><h4>Координаты</h4></div>
+                                                                <div class="col-3"><h4>Алтернативное название</h4></div>
+                                                                <div class="col-2"><h4>Идентификатор в ИБ</h4></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="box__children-content">
+                                                            <div class="row">
+                                                                <div class="col-2">Точка 1</div>
+                                                                <div class="col-3">г. Москва, ул. Донская, д. 8 стр. 1.</div>
+                                                                <div class="col-2">53.352434, 83.773057</div>
+                                                                <div class="col-3">Точка 1 недалеко от центра</div>
+                                                                <div class="col-2">774501175</div>
+                                                            </div>
+                                                            <div class="btn-edit"><button><span></span></button></div>
+                                                        </div>
+                                                        <div class="box__children-edit">
+                                                            <div class="box__form">
+                                                                <form>
+                                                                    <div class="row">
+                                                                        <div class="col-2">Точка 1</div>
+                                                                        <div class="col-3">г. Москва, ул. Донская, д. 8 стр. 1.</div>
+                                                                        <div class="col-2">53.352434, 83.773057</div>
+                                                                        <div class="col-3">
+                                                                           <div class="box__input"><input type="text" placeholder="Альтернативное описание" value="Точка 1 недалеко от центра"></div>
+                                                                        </div>
+                                                                        <div class="col-2">774501175</div>
+                                                                        <div class="btn-accept"><button><span></span></button></div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <div class="box__children-content">
+                                                            <div class="row">
+                                                                <div class="col-2">Точка 1</div>
+                                                                <div class="col-3">г. Москва, ул. Донская, д. 8 стр. 1.</div>
+                                                                <div class="col-2">53.352434, 83.773057</div>
+                                                                <div class="col-3">Точка 1 недалеко от центра</div>
+                                                                <div class="col-2">774501175</div>
+                                                            </div>
+                                                            <div class="btn-edit"><button><span></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col-2">Органицация 1</div>
+                                                        <div class="col-3">ИНН: 386182824401</div>
+                                                        <div class="col-2">КПП: 774501175</div>
+                                                        <div class="col-3"></div>
+                                                        <div class="col-2"></div>
+                                                    </div>
+                                                    <div class="btn-toggle"><button><span></span></button></div>
+                                                </div>
+                                                <div class="box__item-content">
+                                                    <div class="box__content__children">
+                                                        <div class="box__children-title">
+                                                            <div class="row">
+                                                                <div class="col-2"><h4>Название</h4></div>
+                                                                <div class="col-3"><h4>Адрес</h4></div>
+                                                                <div class="col-2"><h4>Координаты</h4></div>
+                                                                <div class="col-3"><h4>Алтернативное название</h4></div>
+                                                                <div class="col-2"><h4>Идентификатор в ИБ</h4></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="box__children-content">
+                                                            <div class="row">
+                                                                <div class="col-2">Точка 1</div>
+                                                                <div class="col-3">г. Москва, ул. Донская, д. 8 стр. 1.</div>
+                                                                <div class="col-2">53.352434, 83.773057</div>
+                                                                <div class="col-3">Точка 1 недалеко от центра</div>
+                                                                <div class="col-2">774501175</div>
+                                                            </div>
+                                                            <div class="btn-edit"><button><span></span></button></div>
+                                                        </div>
+                                                        <div class="box__children-content">
+                                                            <div class="row">
+                                                                <div class="col-2">Точка 1</div>
+                                                                <div class="col-3">г. Москва, ул. Донская, д. 8 стр. 1.</div>
+                                                                <div class="col-2">53.352434, 83.773057</div>
+                                                                <div class="col-3">Точка 1 недалеко от центра</div>
+                                                                <div class="col-2">774501175</div>
+                                                            </div>
+                                                            <div class="btn-edit"><button><span></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item active" data-table>
+                                                    <div class="row">
+                                                        <div class="col-2">Органицация 1</div>
+                                                        <div class="col-3">ИНН: 386182824401</div>
+                                                        <div class="col-2">КПП: 774501175</div>
+                                                        <div class="col-3"></div>
+                                                        <div class="col-2"></div>
+                                                    </div>
+                                                    <div class="btn-toggle"><button><span></span></button></div>
+                                                </div>
+                                                <div class="box__item-content">
+                                                    <div class="box__content__children">
+                                                        <div class="box__children-title">
+                                                            <div class="row">
+                                                                <div class="col-2"><h4>Название</h4></div>
+                                                                <div class="col-3"><h4>Адрес</h4></div>
+                                                                <div class="col-2"><h4>Координаты</h4></div>
+                                                                <div class="col-3"><h4>Алтернативное название</h4></div>
+                                                                <div class="col-2"><h4>Идентификатор в ИБ</h4></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="box__children-content">
+                                                            <div class="row">
+                                                                <div class="col-2">Точка 1</div>
+                                                                <div class="col-3">г. Москва, ул. Донская, д. 8 стр. 1.</div>
+                                                                <div class="col-2">53.352434, 83.773057</div>
+                                                                <div class="col-3">Точка 1 недалеко от центра</div>
+                                                                <div class="col-2">774501175</div>
+                                                            </div>
+                                                            <div class="btn-edit"><button><span></span></button></div>
+                                                        </div>
+                                                        <div class="box__children-content">
+                                                            <div class="row">
+                                                                <div class="col-2">Точка 1</div>
+                                                                <div class="col-3">г. Москва, ул. Донская, д. 8 стр. 1.</div>
+                                                                <div class="col-2">53.352434, 83.773057</div>
+                                                                <div class="col-3">Точка 1 недалеко от центра</div>
+                                                                <div class="col-2">774501175</div>
+                                                            </div>
+                                                            <div class="btn-edit"><button><span></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box__table__item">
+                                                <div class="box__item" data-table>
+                                                    <div class="row">
+                                                        <div class="col-2">Органицация 1</div>
+                                                        <div class="col-3">ИНН: 386182824401</div>
+                                                        <div class="col-2">КПП: 774501175</div>
+                                                        <div class="col-3"></div>
+                                                        <div class="col-2"></div>
+                                                    </div>
+                                                    <div class="btn-toggle"><button><span></span></button></div>
+                                                </div>
+                                                <div class="box__item-content">
+                                                    <div class="box__content__children">
+                                                        <div class="box__children-title">
+                                                            <div class="row">
+                                                                <div class="col-2"><h4>Название</h4></div>
+                                                                <div class="col-3"><h4>Адрес</h4></div>
+                                                                <div class="col-2"><h4>Координаты</h4></div>
+                                                                <div class="col-3"><h4>Алтернативное название</h4></div>
+                                                                <div class="col-2"><h4>Идентификатор в ИБ</h4></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="box__children-content">
+                                                            <div class="row">
+                                                                <div class="col-2">Точка 1</div>
+                                                                <div class="col-3">г. Москва, ул. Донская, д. 8 стр. 1.</div>
+                                                                <div class="col-2">53.352434, 83.773057</div>
+                                                                <div class="col-3">Точка 1 недалеко от центра</div>
+                                                                <div class="col-2">774501175</div>
+                                                            </div>
+                                                            <div class="btn-edit"><button><span></span></button></div>
+                                                        </div>
+                                                        <div class="box__children-content">
+                                                            <div class="row">
+                                                                <div class="col-2">Точка 1</div>
+                                                                <div class="col-3">г. Москва, ул. Донская, д. 8 стр. 1.</div>
+                                                                <div class="col-2">53.352434, 83.773057</div>
+                                                                <div class="col-3">Точка 1 недалеко от центра</div>
+                                                                <div class="col-2">774501175</div>
+                                                            </div>
+                                                            <div class="btn-edit"><button><span></span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table__content-bottom">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="box__pagination">
+                                                        <ul>
+                                                            <li class="prev"><a href="#"><span></span></a></li>
+                                                            <li><a href="#">1</a></li>
+                                                            <li><a href="#">2</a></li>
+                                                            <li class="active"><a href="#">3</a></li>
+                                                            <li><a href="#">4</a></li>
+                                                            <li><a href="#">...</a></li>
+                                                            <li><a href="#">7</a></li>
+                                                            <li class="next"><a href="#"><span></span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+					        </div>
+					    </div>
+					</section>
+
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+#__nuxt,
+#__layout {
+    @apply h-full overflow-hidden;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Admin</title>
+
+    {% block stylesheets %}
+        <link href='https://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic|Noto+Sans:400,400italic,700italic,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ asset('bundles/creonitadmin/css/vendor.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/creonitadmin/css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/creonitadmin/css/admin.css') }}">
+    {% endblock %}
+
+    <style>
+        .page-wrapper {
+            padding: 50px 20px;
+            justify-content: center;
+        }
+        .page-content {
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="page-content">
+        <div class="page-content-module">
+            <form method="post">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                <h1 class="h3 mb-3 font-weight-normal">Авторизуйтесь</h1>
+                <div class="form-group">
+                    <label for="inputEmail">Логин</label>
+                    <input type="text" value="{{ last_username }}" name="_username" id="inputEmail" class="form-control" required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputPassword">Пароль</label>
+                    <input type="password" name="_password" id="inputPassword" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" name="_remember_me"> Запомни меня
+                        </label>
+                    </div>
+                </div>
+
+                <button class="btn btn-lg btn-primary" type="submit">
+                    Войти
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/creonitadmin/js/vendor.js') }}"></script>
+    <script src="{{ asset('bundles/creonitadmin/js/admin.js') }}"></script>
+    <script src="{{ asset('bundles/creonitadmin/js/common.js') }}"></script>
+{% endblock %}
+
+</body>
+</html>

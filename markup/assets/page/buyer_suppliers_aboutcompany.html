@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Покупатель/Поставщики/О компании</title>
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="" />
+    <meta name="author" content="" />
+    <meta name="designer" content="" />
+    <link rel="alternate" href="" hreflang="en" />
+    <link rel="alternate" href="" hreflang="fr" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="title" />
+    <meta property="og:site_name" content="site_name" />
+    <meta property="og:description" content="description" />
+    <meta property="og:url" content="url" />
+    <meta property="og:image" content="image" />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Plus -->
+    <meta itemprop="name" content="name" />
+    <meta itemprop="description" content="description" />
+    <meta itemprop="image" content="image" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="card" />
+    <meta name="twitter:title" content="title" />
+    <meta name="twitter:description" content="description" />
+    <meta name="twitter:site" content="@site" />
+    <meta name="twitter:creator" content="@creator" />
+    <meta name="twitter:url" content="url" />
+    <meta name="twitter:image" content="image" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="${require('../img/favicon/apple-icon-57x57.png')}">
+    <link rel="apple-touch-icon" sizes="60x60" href="${require('../img/favicon/apple-icon-60x60.png')}">
+    <link rel="apple-touch-icon" sizes="72x72" href="${require('../img/favicon/apple-icon-72x72.png')}">
+    <link rel="apple-touch-icon" sizes="76x76" href="${require('../img/favicon/apple-icon-76x76.png')}">
+    <link rel="apple-touch-icon" sizes="114x114" href="${require('../img/favicon/apple-icon-114x114.png')}">
+    <link rel="apple-touch-icon" sizes="120x120" href="${require('../img/favicon/apple-icon-120x120.png')}">
+    <link rel="apple-touch-icon" sizes="144x144" href="${require('../img/favicon/apple-icon-144x144.png')}">
+    <link rel="apple-touch-icon" sizes="152x152" href="${require('../img/favicon/apple-icon-152x152.png')}">
+    <link rel="apple-touch-icon" sizes="180x180" href="${require('../img/favicon/apple-icon-180x180.png')}">
+
+    <link rel="icon" type="image/png" href="${require('../img/favicon/favicon-16x16.png')}" sizes="16x16">
+    <link rel="icon" type="image/png" href="${require('../img/favicon/favicon-32x32.png')}" sizes="32x32">
+    <link rel="icon" type="image/png" href="${require('../img/favicon/favicon-96x96.png')}" sizes="96x96">
+    <link rel="icon" type="image/png" href="${require('../img/favicon/android-icon-192x192.png')}" sizes="192x192">
+   
+    <link rel="manifest" href="${require('../img/favicon/manifest.json')}">
+    <link rel="shortcut icon" href="${require('../img/favicon/favicon.ico')}">
+    <meta name="msapplication-TileColor" content="#3D2797">
+    <meta name="msapplication-TileImage" content="${require('../img/favicon/ms-icon-144x144.png')}">
+    <meta name="theme-color" content="#3D2797">
+
+</head>
+
+<body>
+   
+    <div class="box__app">
+       
+        ${require('../components/header-buyer/header.html')}
+        
+        <div class="box__app__content">
+           
+            <div class="box__app__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="box__breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Поставщики</a></li>
+                                    <li>Вкусторг</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            ${require('../components/profile/profile.html')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box__app__main">
+               
+                <main role="main">
+				
+					<section class="box__suppliers__page">
+					    <div class="container">
+					        <div class="row">
+					            <div class="col-9">
+					                <h1>Вкусторг</h1>
+					            </div>
+					            <div class="col-3">
+					                <div class="btn btn__icon-favorite btn-right"><button><span style="background-image: url(${require('../img/icon/to-favorites.svg')})"></span>В избранное</button></div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-12">
+					                <div class="box__tabs">
+                                        <ul>
+                                            <li class="active"><a href="#">О компании</a></li>
+                                            <li><a href="#">Товары</a></li>
+                                        </ul>
+                                    </div>
+					            </div>
+					        </div>
+                            <div class="row content-aboutcompany">
+                               <div class="col-12 col-xl-6">
+                                    <div class="box__slider">
+                                        <div class="swiper-container gallery-top">
+                                            <div class="swiper-wrapper">
+                                              <div class="swiper-slide" style="background-image:url(${require('../img/image/slide_5.jpg')})"></div>
+                                              <div class="swiper-slide" style="background-image:url(${require('../img/image/slide_6.jpg')})"></div>
+                                              <div class="swiper-slide" style="background-image:url(${require('../img/image/slide_7.jpg')})"></div>
+                                              <div class="swiper-slide" style="background-image:url(${require('../img/image/slide_8.jpg')})"></div>
+                                            </div>
+                                            <!-- Add Arrows -->
+                                            <div class="swiper-button-next swiper-button-white"></div>
+                                            <div class="swiper-button-prev swiper-button-white"></div>
+                                          </div>
+                                          <div class="swiper-container gallery-thumbs">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide" style="background-image:url(${require('../img/image/slide_5.jpg')})"></div>
+                                                <div class="swiper-slide" style="background-image:url(${require('../img/image/slide_6.jpg')})"></div>
+                                                <div class="swiper-slide" style="background-image:url(${require('../img/image/slide_7.jpg')})"></div>
+                                                <div class="swiper-slide" style="background-image:url(${require('../img/image/slide_8.jpg')})"></div>
+                                            </div>
+                                          </div>   
+                                    </div>
+                               </div>
+                               <div class="col-12 col-xl-5">
+                                   <div class="box__company__logo"><a href="#"><img src="${require('../img/image/logo-company-1.jpg')}" alt=""></a></div>
+                                   <div class="box__company-site"><a href="#">rebroipivo.ru</a></div>
+                                   <div class="box__company-string">
+                                       <ul>
+                                           <li><span>ИНН:</span>4373029240</li>
+                                           <li><span>КПП:</span>589401383</li>
+                                           <li><span>Доп. ресурс: </span><a href="#">vkustorg.ru</a></li>
+                                       </ul>
+                                   </div>
+                                   <div class="box__company-description"><p>Сеть ресторанов быстрого питания, рожденная в Сибири. Мы готовим и доставляем вкусную еду для вас, обеспечивая высокое качество по доступной цене. Компания стала обладателем награды «Торговля России 2019» в номинации «Лучший объект фастфуда», организованного Минпромторгом РФ. «Грильница» больше 8 лет является флагманом в сфере ресторанов быстрого питания на территории Алтайского края и теперь выходит на федеральный уровень, благодаря развитию сети по модели.</p></div>
+                               </div>
+                               <div class="col-12">
+                                    <div class="box__tabs">
+                                        <ul>
+                                            <li class="active" data-tab="delivery-1">Доставка</li>
+                                            <li data-tab="pay-1">Оплата</li>
+                                        </ul>
+                                    </div>
+                                    <div data-tab="delivery-1" class="box__tab-content active">
+                                        <p>Доставка осуществляется в пределах г. Москвы и Одинцовского<br/> района  Московской области каждый день, кроме воскресенья.</p>
+
+                                        <p>Время доставки в любое удобное для Вас время с 9:00 до 19:00<br/> часов и оговаривается при оформлении заказа.</p>
+
+                                        <p>При заказе до 1 499 руб. – 300 руб. <br/>
+                                        При заказе свыше 1 500 руб. – бесплатно<br/>
+                                        Минимальная сумма заказа – 799 руб.</p>
+                                    </div>
+                                    <div data-tab="pay-1" class="box__tab-content">
+                                       <p>Информация о оплате.</p>
+                                   </div>
+                               </div>
+                                <div class="col-12">
+                                    <div class="box__company-comment">
+                                       <div class="box__form">
+                                           <form>
+                                                <div class="box__textarea">
+                                                   <textarea placeholder="Комментарий о копании"></textarea>
+                                                </div>
+                                                <div class="box__comment-prompt">Данный комментарий будет виден только для вас</div>
+                                               <div class="btn"><button>Отправить</button></div>
+                                           </form>
+                                       </div>
+                                   </div>
+                               </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </main>
+                
+            </div>
+            
+            ${require('../components/footer/footer.html')}
+            
+        </div>
+    
+    </div>
+
+    <div class="hidden"></div>
+    
+    ${require('../components/popups/popups.html')}
+
+</body>
+
+</html>
