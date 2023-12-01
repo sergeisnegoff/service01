@@ -62,12 +62,12 @@ class EventSubscriber implements EventSubscriberInterface
     {
         $code = $event->getVerificationCode();
 
-        if ($code->getScope() === 'phone') {
-            $this->megafonService->send(
-                $this->phoneHelper->normalizePhone($code->getKey()),
-                sprintf('Код подтверждения: %s', $code->getCode())
-            );
-        }
+//        if ($code->getScope() === 'phone') {
+//            $this->megafonService->send(
+//                $this->phoneHelper->normalizePhone($code->getKey()),
+//                sprintf('Код подтверждения: %s', $code->getCode())
+//            );
+//        }
     }
 
     public function onKernelRequest(RequestEvent $event)
