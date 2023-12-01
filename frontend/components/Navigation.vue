@@ -11,7 +11,7 @@
                     :class="$route.name === 'company-list' && 'pointer-events-none'"
                     to="/"
                 >
-                    <img :src="require('@/assets/img/icon/logo.svg')" alt="">
+<!--                    <img :src="require('@/assets/img/icon/logo.svg')" alt="">-->
                 </NuxtLink>
             </div>
             <div v-if="!isMinimal" class="btn__nav">
